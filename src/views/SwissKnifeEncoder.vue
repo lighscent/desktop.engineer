@@ -9,6 +9,17 @@ const input = ref('')
 const output = ref('')
 const error = ref('')
 
+const htmlEntityMap = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", '#x27': "'", '#x2F': '/', '#x60': '`', '#x3D': '=', nbsp: '\u00A0' }
+
+function decodeHtmlEntities(str) {
+  return str.replace(/&(#\d+|#x[\da-fA-F]+|\w+);/g, (_, entity) => {
+    if (htmlEntityMap[entity]) return htmlEntityMap[entity]
+    if (entity.startsWith('#x')) return String.fromCharCode(parseInt(entity.slice(2), 16))
+    if (entity.startsWith('#')) return String.fromCharCode(parseInt(entity.slice(1)))
+    return _
+  })
+}
+
 function process() {
   const val = input.value
   if (!val) { output.value = ''; error.value = ''; return }
@@ -25,12 +36,7 @@ function process() {
       switch (type.value) {
         case 'url': output.value = decodeURIComponent(val); break
         case 'base64': output.value = atob(val); break
-        case 'html': {
-          const el = document.createElement('textarea')
-          el.innerHTML = val
-          output.value = el.value
-          break
-        }
+        case 'html': output.value = decodeHtmlEntities(val); break
         case 'hex': output.value = new TextDecoder().decode(new Uint8Array(val.trim().split(/\s+/).map(h => parseInt(h, 16)))); break
       }
     }
