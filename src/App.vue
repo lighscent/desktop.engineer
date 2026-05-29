@@ -1,12 +1,11 @@
 <script setup>
 import { ref, computed, watch, onBeforeUnmount } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useAppStore } from '@/stores/appStore'
 import { useI18n } from '@/i18n'
 import { applySeo } from '@/seo'
 import CookieConsent from '@/components/CookieConsent.vue'
 
-const router = useRouter()
 const route = useRoute()
 const mobileMenuOpen = ref(false)
 const hoveredCat = ref(null)
@@ -70,10 +69,6 @@ const categories = computed(() =>
   }))
 )
 
-function navigate(path) {
-  router.push(path)
-}
-
 function openDropdown(name) {
   if (dropdownTimer.value) {
     clearTimeout(dropdownTimer.value)
@@ -102,21 +97,21 @@ onBeforeUnmount(() => {
             <i class="fas fa-bars text-lg"></i>
           </label>
           <ul v-if="mobileMenuOpen" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-base-200 rounded-box w-64 border border-base-300">
-            <li><a :class="{ active: route.path === '/' }" @click="navigate('/')"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</a></li>
+            <li><router-link to="/" :class="{ active: route.path === '/' }"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</router-link></li>
             <li v-for="cat in categories" :key="cat.name" class="menu-title mt-2">
               <span><i :class="'fas ' + cat.icon + ' w-5'"></i> {{ cat.name }}</span>
               <ul>
                 <li v-for="item in cat.items" :key="item.path">
-                  <a :class="{ active: route.path === item.path }" @click="navigate(item.path)">{{ item.name }}</a>
+                  <router-link :to="item.path" :class="{ active: route.path === item.path }">{{ item.name }}</router-link>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost text-lg font-mono gap-1.5 px-2" @click="navigate('/')">
+        <router-link to="/" class="btn btn-ghost text-lg font-mono gap-1.5 px-2">
           <span class="text-success font-bold">~/></span>
           <span class="hidden sm:inline">{{ t('nav.brand') }}</span>
-        </a>
+        </router-link>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-sm gap-1">
@@ -142,7 +137,7 @@ onBeforeUnmount(() => {
               @mouseleave="closeDropdown()"
             >
               <li v-for="item in cat.items" :key="item.path">
-                <a :class="{ active: route.path === item.path }" @click="navigate(item.path)">{{ item.name }}</a>
+                <router-link :to="item.path" :class="{ active: route.path === item.path }">{{ item.name }}</router-link>
               </li>
             </ul>
           </li>
