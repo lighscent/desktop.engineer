@@ -58,7 +58,7 @@ function applyTemplate(tpl) {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-gear mr-2"></i>{{ t('tools.sshConfigGenerator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-gear mr-2"></i>{{ t('tools.sshConfigGenerator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.sshConfigGenerator.desc') }}</p>
 
     <div class="mb-6 flex flex-wrap gap-2">

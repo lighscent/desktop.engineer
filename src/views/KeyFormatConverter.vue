@@ -73,10 +73,10 @@ function copy() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-arrows-rotate mr-2"></i>{{ t('tools.keyFormatConverter.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-arrows-rotate mr-2"></i>{{ t('tools.keyFormatConverter.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.keyFormatConverter.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="form-control mb-4">
         <label class="label"><span class="label-text">{{ t('tools.keyFormatConverter.direction') }}</span></label>
         <div class="flex gap-4">
@@ -108,7 +108,7 @@ function copy() {
         <h2 class="text-xl font-mono font-bold">{{ t('tools.keyFormatConverter.instructions') }}</h2>
         <button class="btn btn-outline btn-sm" @click="copy"><i class="fas fa-copy mr-1"></i>{{ t('tools.keyFormatConverter.copy') }}</button>
       </div>
-      <pre class="mockup-code p-4 text-sm whitespace-pre-wrap">{{ result }}</pre>
+      <pre class="mockup-code p-4 text-sm whitespace-pre-wrap overflow-x-auto max-w-full">{{ result }}</pre>
     </div>
   </div>
 </template>

@@ -32,10 +32,10 @@ function copy() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-cloud-upload-alt mr-2"></i>{{ t('tools.sshInstallAssistant.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-cloud-upload-alt mr-2"></i>{{ t('tools.sshInstallAssistant.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.sshInstallAssistant.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.user') }}</span></label>
@@ -75,7 +75,7 @@ function copy() {
         <h2 class="text-xl font-mono font-bold">{{ t('tools.sshInstallAssistant.command') }}</h2>
         <button class="btn btn-outline btn-sm" @click="copy"><i class="fas fa-copy mr-1"></i>{{ t('tools.sshInstallAssistant.copy') }}</button>
       </div>
-      <pre class="mockup-code p-4 text-sm whitespace-pre-wrap">{{ command }}</pre>
+      <pre class="mockup-code p-4 text-sm whitespace-pre-wrap overflow-x-auto">{{ command }}</pre>
     </div>
   </div>
 </template>

@@ -33,10 +33,10 @@ function copy() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-clock mr-2"></i>{{ t('tools.cronGenerator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-clock mr-2"></i>{{ t('tools.cronGenerator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.cronGenerator.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="form-control mb-6">
         <label class="label"><span class="label-text">{{ t('tools.cronGenerator.presets') }}</span></label>
         <div class="flex flex-wrap gap-2">
@@ -79,7 +79,7 @@ function copy() {
       </div>
     </div>
 
-    <div class="card bg-base-200 border border-base-300 p-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 w-full min-w-0">
       <div class="flex items-center justify-between mb-3">
         <div>
           <h2 class="text-xl font-mono font-bold">{{ t('tools.cronGenerator.expression') }}</h2>
@@ -87,7 +87,7 @@ function copy() {
         </div>
         <button class="btn btn-outline btn-sm" @click="copy"><i class="fas fa-copy mr-1"></i>{{ t('tools.cronGenerator.copy') }}</button>
       </div>
-      <div class="mockup-code p-4">
+      <div class="mockup-code p-4 overflow-x-auto">
         <code class="text-lg font-mono">{{ expression }}</code>
       </div>
     </div>

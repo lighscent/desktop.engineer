@@ -52,10 +52,10 @@ function copy() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-tools mr-2"></i>{{ t('tools.swissKnifeEncoder.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-tools mr-2"></i>{{ t('tools.swissKnifeEncoder.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.swissKnifeEncoder.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-3 mb-6">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.mode') }}</span></label>

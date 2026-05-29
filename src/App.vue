@@ -96,7 +96,7 @@ onBeforeUnmount(() => {
           <label tabindex="0" class="btn btn-ghost btn-square lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
             <i class="fas fa-bars text-lg"></i>
           </label>
-          <ul v-if="mobileMenuOpen" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-base-200 rounded-box w-64 border border-base-300">
+          <ul v-if="mobileMenuOpen" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-base-200 rounded-box w-64 max-w-[calc(100vw-2rem)] border border-base-300">
             <li><router-link to="/" :class="{ active: route.path === '/' }"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</router-link></li>
             <li v-for="cat in categories" :key="cat.name" class="menu-title mt-2">
               <span><i :class="'fas ' + cat.icon + ' w-5'"></i> {{ cat.name }}</span>
@@ -159,7 +159,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <main class="flex-1 container mx-auto px-4 sm:px-6 py-10 max-w-6xl">
+    <main class="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-10 max-w-6xl">
       <router-view />
     </main>
 

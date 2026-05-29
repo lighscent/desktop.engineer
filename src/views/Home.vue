@@ -86,20 +86,21 @@ function handleStar(e, path) {
     <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-success/10 mb-6">
       <i class="fas fa-terminal text-3xl text-success"></i>
     </div>
-    <h1 class="text-5xl font-mono font-bold mb-3 tracking-tight">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-mono font-bold mb-3 tracking-tight">
       {{ t('home.title') }}
     </h1>
-    <p class="text-lg text-base-content/60 max-w-2xl mx-auto leading-relaxed mb-6">
+    <p class="text-sm sm:text-lg text-base-content/60 max-w-2xl mx-auto leading-relaxed mb-6">
       {{ t('home.subtitle') }}
     </p>
     <a
       href="https://github.com/lighscent/desktop.engineer"
       target="_blank"
       rel="noopener noreferrer"
-      class="btn btn-outline btn-sm gap-2"
+      class="btn btn-outline btn-sm gap-2 whitespace-nowrap"
     >
       <i class="fab fa-github text-base"></i>
-      <span>{{ t('home.github') }}</span>
+      <span class="hidden sm:inline">{{ t('home.github') }}</span>
+      <span class="inline sm:hidden">Open-Source Project</span>
     </a>
     <p class="mt-3 text-xs text-base-content/40 font-mono">
       {{ t('home.stack') }}
@@ -139,19 +140,19 @@ function handleStar(e, path) {
         {{ cat.tools.length }}
       </span>
     </div>
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <div
         v-for="tool in cat.tools"
         :key="tool.path"
-        class="card bg-base-200/60 backdrop-blur-sm border border-base-300 hover:border-base-content/30 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 group"
+        class="card bg-base-200/60 backdrop-blur-sm border border-base-300 hover:border-base-content/30 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 group w-full min-w-0"
         :class="cat.color"
         style="border-left-width: 4px;"
         @click="router.push(tool.path)"
       >
-        <div class="card-body py-4 px-5">
-          <div class="flex items-start justify-between">
-            <h3 class="card-title font-mono text-sm gap-2 flex-1 min-w-0">
-              <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-base-300/70 text-base-content/70 shrink-0">
+        <div class="card-body py-3 px-3 sm:py-4 sm:px-5">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="card-title font-mono text-xs sm:text-sm gap-2 flex-1 min-w-0">
+              <span class="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-base-300/70 text-base-content/70 shrink-0">
                 <i :class="'fas ' + tool.icon + ' text-xs'"></i>
               </span>
               <span class="truncate">{{ tool.title }}</span>
@@ -168,7 +169,7 @@ function handleStar(e, path) {
               ></i>
             </button>
           </div>
-          <p class="text-xs text-base-content/50 leading-relaxed ml-9">{{ tool.desc }}</p>
+          <p class="text-xs text-base-content/50 leading-relaxed ml-8 sm:ml-9">{{ tool.desc }}</p>
         </div>
       </div>
     </div>

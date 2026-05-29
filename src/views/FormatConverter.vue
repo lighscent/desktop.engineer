@@ -150,7 +150,7 @@ const formats = ['json', 'yaml', 'csv']
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-exchange-alt mr-2"></i>{{ t('tools.formatConverter.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-exchange-alt mr-2"></i>{{ t('tools.formatConverter.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.formatConverter.desc') }}</p>
 
     <div class="grid gap-4 md:grid-cols-2 mb-6">

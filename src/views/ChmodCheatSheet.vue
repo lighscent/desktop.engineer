@@ -81,7 +81,7 @@ function checkCustom() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-lock mr-2"></i>{{ t('tools.chmodCheatSheet.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-lock mr-2"></i>{{ t('tools.chmodCheatSheet.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.chmodCheatSheet.desc') }}</p>
 
     <div class="overflow-x-auto mb-8">
@@ -97,18 +97,18 @@ function checkCustom() {
             :class="{ 'bg-base-300': selectedPath === r.path }"
             @click="selectedPath = r.path"
           >
-            <td class="font-mono">{{ r.path }}</td>
-            <td>{{ t('tools.chmodCheatSheet.' + r.typeKey) }}</td>
-            <td><code class="font-mono font-bold">{{ r.octal }}</code></td>
-            <td><code class="font-mono">{{ r.perms }}</code></td>
-            <td><code class="font-mono text-xs">{{ r.cmd }}</code></td>
-            <td class="text-xs max-w-xs">{{ t('tools.chmodCheatSheet.' + r.reasonKey) }}</td>
+            <td class="font-mono whitespace-nowrap sm:whitespace-normal">{{ r.path }}</td>
+            <td class="whitespace-nowrap sm:whitespace-normal">{{ t('tools.chmodCheatSheet.' + r.typeKey) }}</td>
+            <td class="whitespace-nowrap sm:whitespace-normal"><code class="font-mono font-bold">{{ r.octal }}</code></td>
+            <td class="whitespace-nowrap sm:whitespace-normal"><code class="font-mono">{{ r.perms }}</code></td>
+            <td class="whitespace-nowrap sm:whitespace-normal"><code class="font-mono text-xs">{{ r.cmd }}</code></td>
+            <td class="text-xs max-w-xs whitespace-nowrap sm:whitespace-normal">{{ t('tools.chmodCheatSheet.' + r.reasonKey) }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div v-if="selectedPath" class="card bg-base-200 border border-base-300 p-4 mb-8">
+    <div v-if="selectedPath" class="card bg-base-200 border border-base-300 p-4 mb-8 w-full min-w-0">
       <div class="flex items-center justify-between">
         <div>
           <span class="font-mono font-bold text-lg">{{ selectedPath }}</span>
@@ -122,7 +122,7 @@ function checkCustom() {
       </div>
     </div>
 
-    <div class="card bg-base-200 border border-base-300 p-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 w-full min-w-0">
       <h2 class="text-xl font-mono font-bold mb-3">{{ t('tools.chmodCheatSheet.checker') }}</h2>
       <p class="text-sm text-base-content/70 mb-3">{{ t('tools.chmodCheatSheet.checkerDesc') }}</p>
       <div class="flex gap-3">
@@ -130,7 +130,7 @@ function checkCustom() {
         <button class="btn btn-outline" @click="checkCustom"><i class="fas fa-check mr-1"></i>{{ t('tools.chmodCheatSheet.check') }}</button>
       </div>
       <div v-if="customOutput" class="mt-3">
-        <pre class="mockup-code p-3 text-sm">{{ customOutput }}</pre>
+        <pre class="mockup-code p-3 text-sm overflow-x-auto">{{ customOutput }}</pre>
       </div>
     </div>
   </div>

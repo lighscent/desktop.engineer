@@ -139,10 +139,10 @@ const hashes = [
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-fingerprint mr-2"></i>{{ t('tools.hashChecker.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-fingerprint mr-2"></i>{{ t('tools.hashChecker.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.hashChecker.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="flex gap-4 mb-4">
         <button class="btn" :class="mode === 'text' ? 'btn-primary' : 'btn-outline'" @click="mode = 'text'"><i class="fas fa-font mr-1"></i>{{ t('tools.hashChecker.text') }}</button>
         <button class="btn" :class="mode === 'file' ? 'btn-primary' : 'btn-outline'" @click="mode = 'file'"><i class="fas fa-file mr-1"></i>{{ t('tools.hashChecker.file') }}</button>
@@ -162,7 +162,7 @@ const hashes = [
       </div>
     </div>
 
-    <div v-if="loading" class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div v-if="loading" class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="flex items-center gap-4">
         <span class="loading loading-spinner loading-md text-primary"></span>
         <div class="flex-1">
@@ -174,7 +174,7 @@ const hashes = [
     </div>
 
     <div v-if="results" class="grid gap-3">
-      <div v-for="h in hashes" :key="h.key" class="card bg-base-200 border border-base-300 p-4">
+      <div v-for="h in hashes" :key="h.key" class="card bg-base-200 border border-base-300 p-4 w-full min-w-0">
         <div class="flex items-center justify-between mb-1">
           <span class="font-mono text-sm font-bold">{{ t('tools.hashChecker.' + h.key) }} ({{ h.bits }} {{ t('tools.hashChecker.bits') }})</span>
           <button class="btn btn-ghost btn-xs" @click="copy(results[h.key])"><i class="fas fa-copy"></i></button>

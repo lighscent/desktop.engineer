@@ -127,7 +127,7 @@ function copy(text) {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-microscope mr-2"></i>{{ t('tools.publicKeyAnalyzer.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-microscope mr-2"></i>{{ t('tools.publicKeyAnalyzer.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.publicKeyAnalyzer.desc') }}</p>
 
     <div class="form-control mb-6">
@@ -144,25 +144,25 @@ function copy(text) {
       <div v-if="result.error" class="alert alert-error mb-6">{{ result.error }}</div>
       <div v-else>
         <div class="grid gap-4 md:grid-cols-2 mb-6">
-          <div class="stat bg-base-200 rounded-box border border-base-300">
+          <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
             <div class="stat-title">{{ t('tools.publicKeyAnalyzer.algorithm') }}</div>
             <div class="stat-value text-lg font-mono break-all">{{ result.algorithm }}</div>
           </div>
-          <div class="stat bg-base-200 rounded-box border border-base-300">
+          <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
             <div class="stat-title">{{ t('tools.publicKeyAnalyzer.keySize') }}</div>
             <div class="stat-value text-lg">{{ result.keySize ? result.keySize + ' ' + t('tools.publicKeyAnalyzer.bits') : t('tools.publicKeyAnalyzer.dash') }}</div>
           </div>
-          <div class="stat bg-base-200 rounded-box border border-base-300">
+          <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
             <div class="stat-title">{{ t('tools.publicKeyAnalyzer.comment') }}</div>
             <div class="stat-value text-lg font-mono break-all">{{ result.comment }}</div>
           </div>
-          <div class="stat bg-base-200 rounded-box border border-base-300">
+          <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
             <div class="stat-title">{{ t('tools.publicKeyAnalyzer.base64Length') }}</div>
             <div class="stat-value text-lg">{{ result.b64Length }} {{ t('tools.publicKeyAnalyzer.chars') }}</div>
           </div>
         </div>
 
-        <div class="card bg-base-200 border border-base-300 p-4 mb-6">
+        <div class="card bg-base-200 border border-base-300 p-4 mb-6 w-full min-w-0">
           <h2 class="text-xl font-mono font-bold mb-3">{{ t('tools.publicKeyAnalyzer.fingerprints') }}</h2>
           <div class="space-y-3">
             <div v-if="result.fingerprints">

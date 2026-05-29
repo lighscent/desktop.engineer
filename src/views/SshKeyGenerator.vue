@@ -79,10 +79,10 @@ function copyCmd() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-key mr-2"></i>{{ t('tools.sshKeyGenerator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-key mr-2"></i>{{ t('tools.sshKeyGenerator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.sshKeyGenerator.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.keyType') }}</span></label>
@@ -115,7 +115,7 @@ function copyCmd() {
         <i class="fas fa-info-circle mr-2"></i>
         <span>{{ t('tools.sshKeyGenerator.ed25519NotSupported') }}</span>
       </div>
-      <div class="mockup-code p-4 text-sm whitespace-pre-wrap font-mono">
+      <div class="mockup-code p-4 text-sm whitespace-pre-wrap font-mono overflow-x-auto">
 ssh-keygen -t ed25519 -C "{{ comment || 'user@host' }}" -f ~/.ssh/{{ getFilename() }}
       </div>
       <button class="btn btn-outline btn-sm mt-2" @click="copyCmd">
@@ -124,7 +124,7 @@ ssh-keygen -t ed25519 -C "{{ comment || 'user@host' }}" -f ~/.ssh/{{ getFilename
     </div>
 
     <div v-if="keypair" class="space-y-4">
-      <div class="card bg-base-200 border border-base-300 p-4">
+      <div class="card bg-base-200 border border-base-300 p-4 w-full min-w-0">
         <div class="flex items-center justify-between mb-2">
           <h2 class="font-mono font-bold">{{ t('tools.sshKeyGenerator.privateKey') }} <code>{{ getFilename() }}</code></h2>
           <div class="flex gap-2">
@@ -135,7 +135,7 @@ ssh-keygen -t ed25519 -C "{{ comment || 'user@host' }}" -f ~/.ssh/{{ getFilename
         <pre class="text-xs font-mono bg-base-300 p-3 rounded-box overflow-x-auto max-h-40">{{ keypair.priv.substring(0, 200) }}...</pre>
       </div>
 
-      <div class="card bg-base-200 border border-base-300 p-4">
+      <div class="card bg-base-200 border border-base-300 p-4 w-full min-w-0">
         <div class="flex items-center justify-between mb-2">
           <h2 class="font-mono font-bold">{{ t('tools.sshKeyGenerator.publicKey') }} <code>{{ getFilename() }}.pub</code></h2>
           <div class="flex gap-2">

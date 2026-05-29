@@ -55,7 +55,7 @@ watch([mode, input], process, { immediate: true })
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-check-double mr-2"></i>{{ t('tools.linterFormatter.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-check-double mr-2"></i>{{ t('tools.linterFormatter.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.linterFormatter.desc') }}</p>
 
     <div class="flex gap-2 mb-6">

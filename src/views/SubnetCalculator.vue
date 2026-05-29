@@ -69,7 +69,7 @@ function calculate() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-network-wired mr-2"></i>{{ t('tools.subnetCalculator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-network-wired mr-2"></i>{{ t('tools.subnetCalculator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.subnetCalculator.desc') }}</p>
 
     <div class="form-control mb-6">
@@ -88,35 +88,35 @@ function calculate() {
     <div v-if="result">
       <div v-if="result.error" class="alert alert-error">{{ result.error }}</div>
       <div v-else class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.network') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.network }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.broadcast') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.broadcast }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.mask') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.mask }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.wildcard') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.wildcard }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.firstHost') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.firstHost }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.lastHost') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.lastHost }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.total') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.totalHosts.toLocaleString() }}</div>
         </div>
-        <div class="stat bg-base-200 rounded-box border border-base-300">
+        <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
           <div class="stat-title">{{ t('tools.subnetCalculator.usable') }}</div>
           <div class="stat-value text-lg font-mono">{{ result.usableHosts.toLocaleString() }}</div>
         </div>

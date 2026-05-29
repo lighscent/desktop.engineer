@@ -54,10 +54,10 @@ generate()
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-key mr-2"></i>{{ t('tools.passwordGenerator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-key mr-2"></i>{{ t('tools.passwordGenerator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.passwordGenerator.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.passwordGenerator.length') }}</span></label>
@@ -104,7 +104,7 @@ generate()
 
     <div class="mt-8">
       <h2 class="text-xl font-mono font-bold mb-3">{{ t('tools.passwordGenerator.entropy') }}</h2>
-      <div class="stat bg-base-200 rounded-box border border-base-300">
+      <div class="stat bg-base-200 rounded-box border border-base-300 w-full min-w-0">
         <div class="stat-title">{{ t('tools.passwordGenerator.charSpace') }}</div>
         <div class="stat-value text-lg font-mono">{{ charset.length }}</div>
         <div class="stat-desc">{{ (Math.log2(charset.length) * length).toFixed(1) }} {{ t('tools.passwordGenerator.entropyDesc', { len: length }) }}</div>

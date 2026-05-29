@@ -138,10 +138,10 @@ function copy() {
 
 <template>
   <div>
-    <h1 class="text-3xl font-mono font-bold mb-2"><i class="fas fa-server mr-2"></i>{{ t('tools.nginxGenerator.title') }}</h1>
+    <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-server mr-2"></i>{{ t('tools.nginxGenerator.title') }}</h1>
     <p class="text-base-content/70 mb-8">{{ t('tools.nginxGenerator.desc') }}</p>
 
-    <div class="card bg-base-200 border border-base-300 p-6 mb-6">
+    <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.domain') }}</span></label>
@@ -161,7 +161,7 @@ function copy() {
         </div>
       </div>
 
-      <div class="flex gap-4 mt-4">
+      <div class="flex flex-wrap gap-4 mt-4">
         <label class="label cursor-pointer justify-start gap-3">
           <input v-model="ssl" type="checkbox" class="checkbox checkbox-sm" />
           <span class="label-text">{{ t('tools.nginxGenerator.ssl') }}</span>
@@ -213,6 +213,6 @@ function copy() {
       <h2 class="text-xl font-mono font-bold">{{ t('tools.nginxGenerator.generated') }}</h2>
       <button class="btn btn-outline btn-sm" @click="copy"><i class="fas fa-copy mr-1"></i>{{ t('tools.nginxGenerator.copy') }}</button>
     </div>
-    <pre class="mockup-code p-4 text-sm whitespace-pre-wrap">{{ config }}</pre>
+    <pre class="mockup-code p-4 text-sm whitespace-pre-wrap overflow-x-auto">{{ config }}</pre>
   </div>
 </template>
