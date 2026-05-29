@@ -5,7 +5,6 @@ import { useAppStore } from '@/stores/appStore'
 import { useI18n } from '@/i18n'
 import { applySeo } from '@/seo'
 import CookieConsent from '@/components/CookieConsent.vue'
-import { SpeedInsights } from "@vercel/speed-insights/vue"
 
 const route = useRoute()
 const mobileMenuOpen = ref(false)
@@ -186,6 +185,5 @@ onBeforeUnmount(() => {
     </footer>
 
     <CookieConsent />
-    <SpeedInsights />
   </div>
 </template>
