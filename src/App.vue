@@ -186,5 +186,6 @@ onBeforeUnmount(() => {
     </footer>
 
     <CookieConsent />
+    <SpeedInsights />
   </div>
 </template>
