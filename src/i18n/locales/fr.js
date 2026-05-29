@@ -24,6 +24,10 @@ export default {
       encoder: 'Couteau Suisse',
     },
   },
+  a11y: {
+    theme: 'Basculer le thème',
+    star: 'Basculer en favori',
+  },
   footer: {
     text: 'desktop.engineer — Outils libres et open source',
     bug: 'Signaler un bug',
@@ -40,6 +44,7 @@ export default {
     title: 'desktop.engineer',
     subtitle: 'Boîte à outils pour ingénieurs système — SSH, réseau, chiffrement et sécurité.',
     favorites: 'Favoris',
+    star: 'Basculer en favori',
     github: 'Projet open source — contributions bienvenues',
     stack: 'Vue 3 · Tailwind · DaisyUI · Vite · PWA · 100% client-side',
     categories: {

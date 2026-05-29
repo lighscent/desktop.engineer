@@ -159,6 +159,7 @@ function handleStar(e, path) {
             <button
               class="btn btn-ghost btn-xs btn-square shrink-0 opacity-0 group-hover:opacity-100 transition-opacity -mr-1 -mt-1"
               :class="{ '!opacity-100': store.isStarred(tool.path) }"
+              :aria-label="t('a11y.star')"
               @click="handleStar($event, tool.path)"
             >
               <i

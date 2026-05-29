@@ -157,7 +157,7 @@ onBeforeUnmount(() => {
           <span class="font-mono text-xs font-bold">{{ locale === 'fr' ? 'EN' : 'FR' }}</span>
         </button>
         <label class="swap swap-rotate btn btn-ghost btn-square">
-          <input type="checkbox" class="theme-controller" value="light" />
+          <input type="checkbox" class="theme-controller" value="light" :aria-label="t('a11y.theme')" />
           <i class="swap-off fas fa-sun text-lg"></i>
           <i class="swap-on fas fa-moon text-lg"></i>
         </label>

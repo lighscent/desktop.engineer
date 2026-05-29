@@ -24,6 +24,10 @@ export default {
       encoder: 'Swiss Knife',
     },
   },
+  a11y: {
+    theme: 'Toggle theme',
+    star: 'Toggle favorite',
+  },
   footer: {
     text: 'desktop.engineer — Free and open-source tools',
     bug: 'Report a bug',
@@ -40,6 +44,7 @@ export default {
     title: 'desktop.engineer',
     subtitle: 'Toolkit for system engineers — SSH, networking, encryption, and security.',
     favorites: 'Favorites',
+    star: 'Toggle favorite',
     github: 'Open-source project — contributions welcome',
     stack: 'Vue 3 · Tailwind · DaisyUI · Vite · PWA · 100% client-side',
     categories: {
