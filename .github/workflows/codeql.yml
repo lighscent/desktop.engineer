@@ -1,23 +1,45 @@
-name: CodeQL
+name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
+    branches: [ "main" ]
   schedule:
+    # Runs automatically once a week at 02:30 AM on Friday
     - cron: '0 6 * * *'
 
 jobs:
   analyze:
+    name: Analyze Code
     runs-on: ubuntu-latest
+    
+    # Required permissions to upload the security results to the GitHub Security tab
     permissions:
-      security-events: write
       actions: read
       contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # CodeQL bundles JavaScript and TypeScript into a single category
+        language: [ 'javascript-typescript' ]
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
-        with:
-          languages: javascript
-      - uses: github/codeql-action/analyze@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        # The 'javascript-typescript' language natively scans .js, .ts, .jsx, .tsx, and .vue files.
+
+    # Note: We do NOT need a build step (like pnpm install/build) here. 
+    # CodeQL analyzes the raw JavaScript/Vue abstract syntax tree directly.
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
