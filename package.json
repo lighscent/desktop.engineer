@@ -1,0 +1,42 @@
+{
+  "name": "desktop.engineer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Toolkit for system engineers — SSH, networking, encryption, and security. 100% client-side PWA.",
+  "keywords": ["ssh", "nginx", "cron", "subnet-calculator", "hash-checker", "password-generator", "pwa", "vue", "tailwindcss", "daisyui"],
+  "author": {
+    "name": "lighscent",
+    "url": "https://github.com/lighscent"
+  },
+  "license": "MIT",
+  "homepage": "https://desktop.engineer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lighscent/desktop.engineer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lighscent/desktop.engineer/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/generate-pwa-icons.mjs && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "hash.js": "^1.1.7",
+    "js-yaml": "^4.1.1",
+    "spark-md5": "^3.0.2",
+    "vue": "^3.5.35",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "autoprefixer": "^10.5.0",
+    "daisyui": "^4.12.24",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.0.14",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}
