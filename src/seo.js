@@ -21,7 +21,7 @@ export function applySeo(path, t) {
   const meta = seoMap[path]
   if (!meta) return
 
-  const title = `${t(meta.titleKey)} — desktop.engineer`
+  const title = path === '/' ? 'desktop.engineer' : `desktop.engineer - ${t(meta.titleKey)}`
   const desc = t(meta.descKey)
 
   document.title = title
