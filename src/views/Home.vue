@@ -15,12 +15,12 @@ const toolKeys = [
     color: 'border-l-success',
     badge: 'badge-success',
     tools: [
-      { key: 'sshKeyGenerator', icon: 'fa-key', path: '/ssh-key-generator' },
-      { key: 'publicKeyAnalyzer', icon: 'fa-microscope', path: '/public-key-analyzer' },
-      { key: 'sshConfigGenerator', icon: 'fa-gear', path: '/ssh-config-generator' },
-      { key: 'keyFormatConverter', icon: 'fa-arrows-rotate', path: '/key-format-converter' },
-      { key: 'sshInstallAssistant', icon: 'fa-cloud-upload-alt', path: '/ssh-install-assistant' },
-      { key: 'chmodCheatSheet', icon: 'fa-lock', path: '/chmod-cheat-sheet' },
+      { key: 'sshKeyGenerator', icon: 'fa-key', path: '/ssh/ssh-key-generator' },
+      { key: 'publicKeyAnalyzer', icon: 'fa-microscope', path: '/ssh/public-key-analyzer' },
+      { key: 'sshConfigGenerator', icon: 'fa-gear', path: '/ssh/ssh-config-generator' },
+      { key: 'keyFormatConverter', icon: 'fa-arrows-rotate', path: '/ssh/key-format-converter' },
+      { key: 'sshInstallAssistant', icon: 'fa-cloud-upload-alt', path: '/ssh/ssh-install-assistant' },
+      { key: 'chmodCheatSheet', icon: 'fa-lock', path: '/ssh/chmod-cheat-sheet' },
     ],
   },
   {
@@ -29,9 +29,9 @@ const toolKeys = [
     color: 'border-l-info',
     badge: 'badge-info',
     tools: [
-      { key: 'passwordGenerator', icon: 'fa-key', path: '/password-generator' },
-      { key: 'envKeyGenerator', icon: 'fa-file-code', path: '/env-key-generator' },
-      { key: 'hashChecker', icon: 'fa-fingerprint', path: '/hash-checker' },
+      { key: 'passwordGenerator', icon: 'fa-key', path: '/security/password-generator' },
+      { key: 'envKeyGenerator', icon: 'fa-file-code', path: '/security/env-key-generator' },
+      { key: 'hashChecker', icon: 'fa-fingerprint', path: '/security/hash-checker' },
     ],
   },
   {
@@ -40,9 +40,18 @@ const toolKeys = [
     color: 'border-l-warning',
     badge: 'badge-warning',
     tools: [
-      { key: 'subnetCalculator', icon: 'fa-network-wired', path: '/subnet-calculator' },
-      { key: 'nginxGenerator', icon: 'fa-server', path: '/nginx-generator' },
-      { key: 'cronGenerator', icon: 'fa-clock', path: '/cron-generator' },
+      { key: 'ipInfo', icon: 'fa-globe', path: '/network/ip-info' },
+      { key: 'subnetCalculator', icon: 'fa-network-wired', path: '/network/subnet-calculator' },
+    ],
+  },
+  {
+    catKey: 'serveur',
+    icon: 'fa-server',
+    color: 'border-l-accent',
+    badge: 'badge-accent',
+    tools: [
+      { key: 'nginxGenerator', icon: 'fa-server', path: '/server/nginx-generator' },
+      { key: 'cronGenerator', icon: 'fa-clock', path: '/server/cron-generator' },
     ],
   },
   {
@@ -51,9 +60,9 @@ const toolKeys = [
     color: 'border-l-error',
     badge: 'badge-error',
     tools: [
-      { key: 'formatConverter', icon: 'fa-exchange-alt', path: '/format-converter' },
-      { key: 'linterFormatter', icon: 'fa-check-double', path: '/linter-formatter' },
-      { key: 'swissKnifeEncoder', icon: 'fa-tools', path: '/swiss-knife-encoder' },
+      { key: 'formatConverter', icon: 'fa-exchange-alt', path: '/data/format-converter' },
+      { key: 'linterFormatter', icon: 'fa-check-double', path: '/data/linter-formatter' },
+      { key: 'swissKnifeEncoder', icon: 'fa-tools', path: '/data/swiss-knife-encoder' },
     ],
   },
 ]

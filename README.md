@@ -7,7 +7,9 @@
   [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](#)
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-  **[Access the Tools](https://desktop.engineer)**
+  <a href="https://devglobe.app/projects/desktop-engineer?utm_source=badge&utm_medium=embed" target="_blank" rel="noopener">
+    <img src="https://devglobe.app/badges/featured-on-devglobe-dark.svg" alt="Featured on DevGlobe" width="250" height="54" />
+  </a>
 </div>
 
 ---

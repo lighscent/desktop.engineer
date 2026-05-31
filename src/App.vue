@@ -24,39 +24,46 @@ const catKeys = [
     key: 'ssh',
     icon: 'fa-key',
     items: [
-      { key: 'keyGenerator', path: '/ssh-key-generator' },
-      { key: 'keyAnalyzer', path: '/public-key-analyzer' },
-      { key: 'sshConfig', path: '/ssh-config-generator' },
-      { key: 'keyConverter', path: '/key-format-converter' },
-      { key: 'installAssistant', path: '/ssh-install-assistant' },
-      { key: 'chmod', path: '/chmod-cheat-sheet' },
+      { key: 'keyGenerator', path: '/ssh/ssh-key-generator' },
+      { key: 'keyAnalyzer', path: '/ssh/public-key-analyzer' },
+      { key: 'sshConfig', path: '/ssh/ssh-config-generator' },
+      { key: 'keyConverter', path: '/ssh/key-format-converter' },
+      { key: 'installAssistant', path: '/ssh/ssh-install-assistant' },
+      { key: 'chmod', path: '/ssh/chmod-cheat-sheet' },
     ],
   },
   {
     key: 'securite',
     icon: 'fa-shield-halved',
     items: [
-      { key: 'password', path: '/password-generator' },
-      { key: 'envKey', path: '/env-key-generator' },
-      { key: 'hash', path: '/hash-checker' },
+      { key: 'password', path: '/security/password-generator' },
+      { key: 'envKey', path: '/security/env-key-generator' },
+      { key: 'hash', path: '/security/hash-checker' },
     ],
   },
   {
     key: 'reseau',
     icon: 'fa-network-wired',
     items: [
-      { key: 'subnet', path: '/subnet-calculator' },
-      { key: 'nginx', path: '/nginx-generator' },
-      { key: 'cron', path: '/cron-generator' },
+      { key: 'ipInfo', path: '/network/ip-info' },
+      { key: 'subnet', path: '/network/subnet-calculator' },
+    ],
+  },
+  {
+    key: 'serveur',
+    icon: 'fa-server',
+    items: [
+      { key: 'nginx', path: '/server/nginx-generator' },
+      { key: 'cron', path: '/server/cron-generator' },
     ],
   },
   {
     key: 'donnees',
     icon: 'fa-code',
     items: [
-      { key: 'format', path: '/format-converter' },
-      { key: 'linter', path: '/linter-formatter' },
-      { key: 'encoder', path: '/swiss-knife-encoder' },
+      { key: 'format', path: '/data/format-converter' },
+      { key: 'linter', path: '/data/linter-formatter' },
+      { key: 'encoder', path: '/data/swiss-knife-encoder' },
     ],
   },
 ]
@@ -90,7 +97,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="min-h-screen flex flex-col bg-base-100">
-    <div class="navbar bg-base-200/80 backdrop-blur-md border-b border-base-300 sticky top-0 z-50 px-4">
+    <div class="navbar bg-base-200/80 backdrop-blur-md border-b border-base-300 sticky top-0 z-50 px-4 flex-shrink-0">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost btn-square lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
@@ -144,6 +151,9 @@ onBeforeUnmount(() => {
         </ul>
       </div>
       <div class="navbar-end gap-2">
+        <router-link to="/changelog" class="btn btn-ghost btn-square" :title="t('changelog.title')">
+          <i class="fas fa-clock-rotate-left text-lg"></i>
+        </router-link>
         <a href="https://github.com/lighscent/desktop.engineer" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-square" title="GitHub">
           <i class="fab fa-github text-lg"></i>
         </a>
@@ -163,12 +173,15 @@ onBeforeUnmount(() => {
       <router-view />
     </main>
 
-    <footer class="flex flex-col items-center gap-1.5 px-4 py-5 bg-base-200 border-t border-base-300 text-sm text-base-content/60">
+    <footer class="flex flex-col items-center gap-1.5 px-4 py-5 bg-base-200 border-t border-base-300 text-sm text-base-content/60 flex-shrink-0">
       <div class="flex items-center gap-2">
         <span class="font-mono text-success text-xs">~/></span>
         <span>{{ t('footer.text') }}</span>
       </div>
       <div class="flex flex-wrap justify-center gap-x-5 gap-y-1">
+        <router-link to="/changelog" class="link link-hover inline-flex items-center gap-1.5">
+          <i class="fas fa-clock-rotate-left text-xs"></i> {{ t('changelog.title') }}
+        </router-link>
         <a href="https://github.com/lighscent/desktop.engineer/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer" class="link link-hover inline-flex items-center gap-1.5">
           <i class="fas fa-bug text-xs"></i> {{ t('footer.bug') }}
         </a>

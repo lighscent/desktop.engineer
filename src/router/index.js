@@ -3,29 +3,33 @@ import Home from '@/views/Home.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
+  { path: '/changelog', name: 'Changelog', component: () => import('@/views/Changelog.vue') },
 
-  // Catégorie 1 : SSH & Gestion des Accès
-  { path: '/ssh-key-generator', name: 'SshKeyGenerator', component: () => import('@/views/SshKeyGenerator.vue') },
-  { path: '/public-key-analyzer', name: 'PublicKeyAnalyzer', component: () => import('@/views/PublicKeyAnalyzer.vue') },
-  { path: '/ssh-config-generator', name: 'SshConfigGenerator', component: () => import('@/views/SshConfigGenerator.vue') },
-  { path: '/key-format-converter', name: 'KeyFormatConverter', component: () => import('@/views/KeyFormatConverter.vue') },
-  { path: '/ssh-install-assistant', name: 'SshInstallAssistant', component: () => import('@/views/SshInstallAssistant.vue') },
-  { path: '/chmod-cheat-sheet', name: 'ChmodCheatSheet', component: () => import('@/views/ChmodCheatSheet.vue') },
+  // Catégorie 1 : SSH & Accès Distant
+  { path: '/ssh/ssh-key-generator', name: 'SshKeyGenerator', component: () => import('@/views/ssh/SshKeyGenerator.vue') },
+  { path: '/ssh/public-key-analyzer', name: 'PublicKeyAnalyzer', component: () => import('@/views/ssh/PublicKeyAnalyzer.vue') },
+  { path: '/ssh/ssh-config-generator', name: 'SshConfigGenerator', component: () => import('@/views/ssh/SshConfigGenerator.vue') },
+  { path: '/ssh/key-format-converter', name: 'KeyFormatConverter', component: () => import('@/views/ssh/KeyFormatConverter.vue') },
+  { path: '/ssh/ssh-install-assistant', name: 'SshInstallAssistant', component: () => import('@/views/ssh/SshInstallAssistant.vue') },
+  { path: '/ssh/chmod-cheat-sheet', name: 'ChmodCheatSheet', component: () => import('@/views/ssh/ChmodCheatSheet.vue') },
 
-  // Catégorie 2 : Sécurité & Secrets Locaux
-  { path: '/password-generator', name: 'PasswordGenerator', component: () => import('@/views/PasswordGenerator.vue') },
-  { path: '/env-key-generator', name: 'EnvKeyGenerator', component: () => import('@/views/EnvKeyGenerator.vue') },
-  { path: '/hash-checker', name: 'HashChecker', component: () => import('@/views/HashChecker.vue') },
+  // Catégorie 2 : Sécurité & Chiffrement
+  { path: '/security/password-generator', name: 'PasswordGenerator', component: () => import('@/views/security/PasswordGenerator.vue') },
+  { path: '/security/env-key-generator', name: 'EnvKeyGenerator', component: () => import('@/views/security/EnvKeyGenerator.vue') },
+  { path: '/security/hash-checker', name: 'HashChecker', component: () => import('@/views/security/HashChecker.vue') },
 
-  // Catégorie 3 : Réseau & Configurations Serveur
-  { path: '/subnet-calculator', name: 'SubnetCalculator', component: () => import('@/views/SubnetCalculator.vue') },
-  { path: '/nginx-generator', name: 'NginxGenerator', component: () => import('@/views/NginxGenerator.vue') },
-  { path: '/cron-generator', name: 'CronGenerator', component: () => import('@/views/CronGenerator.vue') },
+  // Catégorie 3 : Réseau
+  { path: '/network/ip-info', name: 'IpInfo', component: () => import('@/views/network/IpInfo.vue') },
+  { path: '/network/subnet-calculator', name: 'SubnetCalculator', component: () => import('@/views/network/SubnetCalculator.vue') },
 
-  // Catégorie 4 : Manipulation de Données
-  { path: '/format-converter', name: 'FormatConverter', component: () => import('@/views/FormatConverter.vue') },
-  { path: '/linter-formatter', name: 'LinterFormatter', component: () => import('@/views/LinterFormatter.vue') },
-  { path: '/swiss-knife-encoder', name: 'SwissKnifeEncoder', component: () => import('@/views/SwissKnifeEncoder.vue') },
+  // Catégorie 4 : Serveur
+  { path: '/server/nginx-generator', name: 'NginxGenerator', component: () => import('@/views/server/NginxGenerator.vue') },
+  { path: '/server/cron-generator', name: 'CronGenerator', component: () => import('@/views/server/CronGenerator.vue') },
+
+  // Catégorie 5 : Données & Dev
+  { path: '/data/format-converter', name: 'FormatConverter', component: () => import('@/views/data/FormatConverter.vue') },
+  { path: '/data/linter-formatter', name: 'LinterFormatter', component: () => import('@/views/data/LinterFormatter.vue') },
+  { path: '/data/swiss-knife-encoder', name: 'SwissKnifeEncoder', component: () => import('@/views/data/SwissKnifeEncoder.vue') },
 ]
 
 export default createRouter({

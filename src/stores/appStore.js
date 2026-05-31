@@ -31,21 +31,22 @@ watch(() => state.configs, v => save(KEYS.configs, v), { deep: true })
 watch(() => state.cookieConsent, v => save(KEYS.cookie, v))
 
 const allTools = [
-  { path: '/ssh-key-generator', title: 'Générateur de Clés SSH' },
-  { path: '/public-key-analyzer', title: 'Inspecteur de Clé Publique' },
-  { path: '/ssh-config-generator', title: 'Générateur ~/.ssh/config' },
-  { path: '/key-format-converter', title: 'Convertisseur OpenSSH ↔ PuTTY' },
-  { path: '/ssh-install-assistant', title: 'Assistant d\'Installation' },
-  { path: '/chmod-cheat-sheet', title: 'Aide-mémoire chmod' },
-  { path: '/password-generator', title: 'Générateur de Mots de Passe' },
-  { path: '/env-key-generator', title: 'Clés d\'Applications (.env)' },
-  { path: '/hash-checker', title: 'Vérificateur de Checksum' },
-  { path: '/subnet-calculator', title: 'Calculateur de Subnet CIDR' },
-  { path: '/nginx-generator', title: 'Générateur Nginx' },
-  { path: '/cron-generator', title: 'Générateur Cron' },
-  { path: '/format-converter', title: 'Convertisseur JSON / YAML / CSV' },
-  { path: '/linter-formatter', title: 'Linter JSON / YAML' },
-  { path: '/swiss-knife-encoder', title: 'Couteau Suisse Encode/Décode' },
+  { path: '/ssh/ssh-key-generator', title: 'Générateur de Clés SSH' },
+  { path: '/ssh/public-key-analyzer', title: 'Inspecteur de Clé Publique' },
+  { path: '/ssh/ssh-config-generator', title: 'Générateur ~/.ssh/config' },
+  { path: '/ssh/key-format-converter', title: 'Convertisseur OpenSSH ↔ PuTTY' },
+  { path: '/ssh/ssh-install-assistant', title: 'Assistant d\'Installation' },
+  { path: '/ssh/chmod-cheat-sheet', title: 'Aide-mémoire chmod' },
+  { path: '/security/password-generator', title: 'Générateur de Mots de Passe' },
+  { path: '/security/env-key-generator', title: 'Clés d\'Applications (.env)' },
+  { path: '/security/hash-checker', title: 'Vérificateur de Checksum' },
+  { path: '/network/ip-info', title: 'Recherche IP' },
+  { path: '/network/subnet-calculator', title: 'Calculateur de Subnet CIDR' },
+  { path: '/server/nginx-generator', title: 'Générateur Nginx' },
+  { path: '/server/cron-generator', title: 'Générateur Cron' },
+  { path: '/data/format-converter', title: 'Convertisseur JSON / YAML / CSV' },
+  { path: '/data/linter-formatter', title: 'Linter JSON / YAML' },
+  { path: '/data/swiss-knife-encoder', title: 'Couteau Suisse Encode/Décode' },
 ]
 
 export function useAppStore() {

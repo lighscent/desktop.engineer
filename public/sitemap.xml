@@ -2,98 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://desktop.engineer/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/ssh-key-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/ssh-key-generator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/public-key-analyzer</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/public-key-analyzer</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/ssh-config-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/ssh-config-generator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/key-format-converter</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/key-format-converter</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/ssh-install-assistant</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/ssh-install-assistant</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/chmod-cheat-sheet</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/ssh/chmod-cheat-sheet</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/password-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/security/password-generator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/env-key-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/security/env-key-generator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/hash-checker</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/security/hash-checker</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/subnet-calculator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/network/ip-info</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/nginx-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/network/subnet-calculator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/cron-generator</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/server/nginx-generator</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://desktop.engineer/server/cron-generator</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/format-converter</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/data/format-converter</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/linter-formatter</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/data/linter-formatter</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://desktop.engineer/swiss-knife-encoder</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://desktop.engineer/data/swiss-knife-encoder</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://desktop.engineer/changelog</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
