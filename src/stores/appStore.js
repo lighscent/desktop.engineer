@@ -18,16 +18,34 @@ function save(key, data) {
   localStorage.setItem(key, JSON.stringify(data))
 }
 
+function remove(key) {
+  localStorage.removeItem(key)
+}
+
+const initialConsent = load(KEYS.cookie, null)
+
 const state = reactive({
-  cookieConsent: load(KEYS.cookie, null),
-  starred: load(KEYS.starred, []),
-  lastUsed: load(KEYS.lastUsed, {}),
-  configs: load(KEYS.configs, {}),
+  cookieConsent: initialConsent,
+  starred: initialConsent === true ? load(KEYS.starred, []) : [],
+  lastUsed: initialConsent === true ? load(KEYS.lastUsed, {}) : {},
+  configs: initialConsent === true ? load(KEYS.configs, {}) : {},
 })
 
-watch(() => state.starred, v => save(KEYS.starred, v), { deep: true })
-watch(() => state.lastUsed, v => save(KEYS.lastUsed, v), { deep: true })
-watch(() => state.configs, v => save(KEYS.configs, v), { deep: true })
+function persistNow() {
+  save(KEYS.starred, state.starred)
+  save(KEYS.lastUsed, state.lastUsed)
+  save(KEYS.configs, state.configs)
+}
+
+function clearStorage() {
+  remove(KEYS.starred)
+  remove(KEYS.lastUsed)
+  remove(KEYS.configs)
+}
+
+watch(() => state.starred, v => { if (state.cookieConsent === true) save(KEYS.starred, v) }, { deep: true })
+watch(() => state.lastUsed, v => { if (state.cookieConsent === true) save(KEYS.lastUsed, v) }, { deep: true })
+watch(() => state.configs, v => { if (state.cookieConsent === true) save(KEYS.configs, v) }, { deep: true })
 watch(() => state.cookieConsent, v => save(KEYS.cookie, v))
 
 const allTools = [
@@ -50,8 +68,14 @@ const allTools = [
 ]
 
 export function useAppStore() {
-  function acceptCookies() { state.cookieConsent = true }
-  function declineCookies() { state.cookieConsent = false }
+  function acceptCookies() {
+    state.cookieConsent = true
+    persistNow()
+  }
+  function declineCookies() {
+    state.cookieConsent = false
+    clearStorage()
+  }
 
   function toggleStarred(path) {
     const idx = state.starred.indexOf(path)

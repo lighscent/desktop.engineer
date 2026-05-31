@@ -4,7 +4,8 @@ import en from './locales/en'
 
 const messages = { fr, en }
 
-const saved = localStorage.getItem('de_locale')
+const consent = localStorage.getItem('de_cookie')
+const saved = consent === 'true' ? localStorage.getItem('de_locale') : null
 const locale = ref(saved === 'en' ? 'en' : 'fr')
 
 document.documentElement.lang = locale.value
@@ -22,8 +23,10 @@ function t(key, params = {}) {
 
 function setLocale(l) {
   locale.value = l
-  localStorage.setItem('de_locale', l)
   document.documentElement.lang = l
+  if (localStorage.getItem('de_cookie') === 'true') {
+    localStorage.setItem('de_locale', l)
+  }
 }
 
 export function useI18n() {
