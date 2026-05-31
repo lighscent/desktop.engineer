@@ -78,6 +78,7 @@ export function useAppStore() {
   }
 
   function toggleStarred(path) {
+    if (state.cookieConsent !== true) return
     const idx = state.starred.indexOf(path)
     if (idx >= 0) state.starred.splice(idx, 1)
     else state.starred.push(path)
