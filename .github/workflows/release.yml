@@ -42,11 +42,29 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build
 
+      - name: Extract release notes
+        id: notes
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json','utf-8'));
+            const content = fs.readFileSync('src/data/changelog.js','utf-8');
+            const m = {};
+            const js = content.replace('export default ', 'm.exports = ');
+            eval(js);
+            const entry = m.exports.find(e => e.version === pkg.version);
+            if (entry) {
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, 'title=' + entry.title.en + '\n');
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, 'body<<EOF\n' + entry.changes.en.join('\n') + '\nEOF\n');
+            }
+          "
+
       - name: Create release
         if: steps.check.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
-          name: ${{ steps.version.outputs.tag }}
-          generate_release_notes: true
+          name: ${{ steps.notes.outputs.title }}
+          body: ${{ steps.notes.outputs.body }}
           files: dist/**
