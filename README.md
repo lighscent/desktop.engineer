@@ -26,28 +26,31 @@ When managing server infrastructure, security and speed are critical. **desktop.
 
 ## The Tools
 
-### SSH & Access Management
-- **[SSH Key Generator](https://desktop.engineer/ssh-key-generator)** — Generate secure RSA/ECDSA keys directly in the browser.
-- **[Public Key Inspector](https://desktop.engineer/public-key-analyzer)** — Analyze algorithms, bit size, and extract MD5/SHA-256 fingerprints.
-- **[~/.ssh/config Generator](https://desktop.engineer/ssh-config-generator)** — Clean, multi-host SSH config builder.
-- **[OpenSSH ↔ PuTTY Converter](https://desktop.engineer/key-format-converter)** — Quick conversion instructions and formatting.
-- **[SSH Install Assistant](https://desktop.engineer/ssh-install-assistant)** — Custom `ssh-copy-id` command generator.
-- **[chmod Cheat Sheet](https://desktop.engineer/chmod-cheat-sheet)** — The ultimate reference for SSH file permissions.
+### SSH & Remote Access
+- **[SSH Key Generator](https://desktop.engineer/ssh/ssh-key-generator)** — Generate secure RSA/ECDSA keys directly in the browser.
+- **[Public Key Inspector](https://desktop.engineer/ssh/public-key-analyzer)** — Analyze algorithms, bit size, and extract MD5/SHA-256 fingerprints.
+- **[~/.ssh/config Generator](https://desktop.engineer/ssh/ssh-config-generator)** — Clean, multi-host SSH config builder.
+- **[OpenSSH ↔ PuTTY Converter](https://desktop.engineer/ssh/key-format-converter)** — Quick conversion instructions and formatting.
+- **[SSH Install Assistant](https://desktop.engineer/ssh/ssh-install-assistant)** — Custom `ssh-copy-id` command generator.
+- **[chmod Cheat Sheet](https://desktop.engineer/ssh/chmod-cheat-sheet)** — The ultimate reference for SSH file permissions.
 
-### Security & Local Secrets
-- **[Password Generator](https://desktop.engineer/password-generator)** — Create strong, CLI-safe passwords.
-- **[Application Keys (.env)](https://desktop.engineer/env-key-generator)** — Generate secure random strings for `JWT_SECRET` or `APP_KEY`.
-- **[Checksum Verifier](https://desktop.engineer/hash-checker)** — Fast local file hashing for MD5, SHA-1, SHA-256, and SHA-512.
+### Security & Encryption
+- **[Password Generator](https://desktop.engineer/security/password-generator)** — Create strong, CLI-safe passwords.
+- **[Application Keys (.env)](https://desktop.engineer/security/env-key-generator)** — Generate secure random strings for `JWT_SECRET` or `APP_KEY`.
+- **[Checksum Verifier](https://desktop.engineer/security/hash-checker)** — Fast local file hashing for MD5, SHA-1, SHA-256, and SHA-512.
 
-### Network & Server Configs
-- **[CIDR Subnet Calculator](https://desktop.engineer/subnet-calculator)** — Instantly calculate network, broadcast, and subnet masks.
-- **[Nginx Generator](https://desktop.engineer/nginx-generator)** — Build solid configurations for reverse proxies, HTTPS, PHP, or static sites.
-- **[Cron Generator](https://desktop.engineer/cron-generator)** — Visual and interactive crontab expression builder.
+### Network
+- **[IP Lookup](https://desktop.engineer/network/ip-info)** — Geolocation, ASN, proxy detection and more via freeipapi.com.
+- **[CIDR Subnet Calculator](https://desktop.engineer/network/subnet-calculator)** — Instantly calculate network, broadcast, and subnet masks.
 
-### Data Manipulation
-- **[JSON / YAML / CSV Converter](https://desktop.engineer/format-converter)** — Seamless universal format conversion.
-- **[JSON / YAML Linter](https://desktop.engineer/linter-formatter)** — Quick syntax validation and formatting.
-- **[Swiss Knife Encoder/Decoder](https://desktop.engineer/swiss-knife-encoder)** — Instantly toggle between URL, Base64, HTML entities, and Hex.
+### Server
+- **[Nginx Generator](https://desktop.engineer/server/nginx-generator)** — Build solid configurations for reverse proxies, HTTPS, PHP, or static sites.
+- **[Cron Generator](https://desktop.engineer/server/cron-generator)** — Visual and interactive crontab expression builder.
+
+### Data & Dev Tools
+- **[JSON / YAML / CSV Converter](https://desktop.engineer/data/format-converter)** — Seamless universal format conversion.
+- **[JSON / YAML Linter](https://desktop.engineer/data/linter-formatter)** — Quick syntax validation and formatting.
+- **[Swiss Knife Encoder/Decoder](https://desktop.engineer/data/swiss-knife-encoder)** — Instantly toggle between URL, Base64, HTML entities, and Hex.
 
 ---
 
