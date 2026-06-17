@@ -1,5 +1,18 @@
 export default [
   {
+    version: '0.1.5',
+    date: '2026-06-17',
+    title: { en: 'Security update', fr: 'Update de sécurité' },
+    changes: {
+      en: [
+        'Updated js-yaml to ^4.2.0 and vite to ^8.0.16',
+      ],
+      fr: [
+        'Mise à jour js-yaml ^4.2.0 et vite ^8.0.16',
+      ],
+    },
+  },
+  {
     version: '0.1.4',
     date: '2026-05-31',
     title: { en: 'Categories, IP Lookup, URL restructure & cookie hardening', fr: 'Catégories, Recherche IP, nouvelles URLs & cookies' },
