@@ -18,8 +18,8 @@
 
 When managing server infrastructure, security and speed are critical. **desktop.engineer** is built with strict privacy and utility in mind:
 
-- **Zero-Trust & 100% Local:** No backend, no API calls, no analytics. Everything (including SSH key and password generation) happens entirely within your browser. 
-- **Offline Ready (PWA):** Install it once, use it anywhere. Thanks to service workers, the toolkit remains fully functional even when you're stuck in a datacenter with no internet access.
+- **Zero-Trust & 100% Local:** No backend, no analytics, no tracking. Everything (including SSH key and password generation) happens entirely within your browser — the only exception is the IP Lookup tool, which queries the free [freeipapi.com](https://freeipapi.com) API (no API key, no data stored).
+- **Offline Ready (PWA):** Install it once, use it anywhere. Thanks to service workers, the toolkit remains fully functional even when you're stuck in a datacenter with no internet access — with the exception of IP Lookup, which requires a connection.
 - **Bilingual:** Fully translated in English and French.
 
 ---
@@ -40,7 +40,7 @@ When managing server infrastructure, security and speed are critical. **desktop.
 - **[Checksum Verifier](https://desktop.engineer/security/hash-checker)** — Fast local file hashing for MD5, SHA-1, SHA-256, and SHA-512.
 
 ### Network
-- **[IP Lookup](https://desktop.engineer/network/ip-info)** — Geolocation, ASN, proxy detection and more via freeipapi.com.
+- **[IP Lookup](https://desktop.engineer/network/ip-info)** — Geolocation, ASN, proxy detection and more via the free freeipapi.com API (the only tool that makes a network call).
 - **[CIDR Subnet Calculator](https://desktop.engineer/network/subnet-calculator)** — Instantly calculate network, broadcast, and subnet masks.
 
 ### Server
