@@ -1,5 +1,26 @@
 export default [
   {
+    version: '0.1.6',
+    date: '2026-08-15',
+    title: { en: 'Security hardening & dependency refresh', fr: 'Durcissement sécurité & mise à jour des dépendances' },
+    changes: {
+      en: [
+        'Updated README: clarified privacy, offline and network usage guarantees',
+        'Updated some dependencies to latest secure versions',
+        'Patched 4 security advisories: CVE-2026-13676, CVE-2026-59869, CVE-2026-13149, CVE-2026-67214',
+        'Restored compatibility with js-yaml 5 ESM exports in the JSON/YAML tools',
+        'Pinned Node.js to v24 minimum',
+      ],
+      fr: [
+        'README mis à jour : garanties de confidentialité, hors ligne et usage réseau clarifiées',
+        'Certaines dépendances mises à jour vers leurs dernières versions sécurisées',
+        '4 avis de sécurité corrigés : CVE-2026-13676, CVE-2026-59869, CVE-2026-13149, CVE-2026-67214',
+        'Compatibilité rétablie avec les exports ESM de js-yaml 5 dans les outils JSON/YAML',
+        'Node.js fixé à v24 minimum',
+      ],
+    },
+  },
+  {
     version: '0.1.5',
     date: '2026-06-17',
     title: { en: 'Security update', fr: 'Update de sécurité' },

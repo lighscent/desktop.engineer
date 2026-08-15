@@ -58,7 +58,7 @@ When managing server infrastructure, security and speed are critical. **desktop.
 
 This project is engineered for speed and simplicity, relying heavily on modern web standards and native browser APIs:
 
-- **Framework:** Vue 3 + Vue Router 4
+- **Framework:** Vue 3 + Vue Router 5
 - **Styling:** Tailwind CSS v3 + DaisyUI v4
 - **Build Tool:** Vite 8
 - **Core Libraries:** `js-yaml`, `spark-md5`, `hash.js`
@@ -69,6 +69,8 @@ This project is engineered for speed and simplicity, relying heavily on modern w
 ## Development
 
 Want to run it locally or contribute? It's incredibly fast to set up.
+
+**Requirements:** [Node.js](https://nodejs.org) >= 24 and [pnpm](https://pnpm.io).
 
 ```bash
 # Install dependencies

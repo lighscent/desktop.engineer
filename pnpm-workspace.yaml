@@ -1,2 +1,2 @@
-minimumReleaseAgeExclude:
-  - daisyui@5.7.17
+overrides:
+  nanoid: ^5.1.16
