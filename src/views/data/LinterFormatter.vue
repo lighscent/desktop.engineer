@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
-import yaml from 'js-yaml'
+import { load, dump } from 'js-yaml'
 import { useI18n } from '@/i18n'
 
 const { t } = useI18n()
@@ -32,13 +32,13 @@ function process() {
       output.value = JSON.stringify(data, null, 2)
     } else {
       try {
-        data = yaml.load(input.value)
+        data = load(input.value)
       } catch (e) {
         const match = e.message.match(/line (\d+)/)
         if (match) errorLine.value = parseInt(match[1])
         throw e
       }
-      output.value = yaml.dump(data, { indent: 2, lineWidth: -1 })
+      output.value = dump(data, { indent: 2, lineWidth: -1 })
     }
   } catch (e) {
     error.value = t('tools.linterFormatter.syntaxError', { message: e.message })

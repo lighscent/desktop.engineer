@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
-import yaml from 'js-yaml'
+import { load, dump } from 'js-yaml'
 import { useI18n } from '@/i18n'
 
 const { t } = useI18n()
@@ -20,7 +20,7 @@ function convert() {
     if (inputFormat.value === 'json') {
       data = JSON.parse(input.value)
     } else if (inputFormat.value === 'yaml') {
-      data = yaml.load(input.value)
+      data = load(input.value)
     } else if (inputFormat.value === 'csv') {
       data = parseCSV(input.value)
     }
@@ -28,7 +28,7 @@ function convert() {
     if (outputFormat.value === 'json') {
       output.value = JSON.stringify(data, null, 2)
     } else if (outputFormat.value === 'yaml') {
-      output.value = yaml.dump(data, { indent: 2, lineWidth: -1 })
+      output.value = dump(data, { indent: 2, lineWidth: -1 })
     } else if (outputFormat.value === 'csv') {
       output.value = toCSV(data)
     }
