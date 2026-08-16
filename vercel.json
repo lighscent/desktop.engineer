@@ -2,7 +2,7 @@
   "framework": "vite",
   "ignoreCommand": "bash -c \"git diff --quiet HEAD~1 HEAD -- . ':(exclude)README.md' ':(exclude)AGENTS.md' ':(exclude)src/data/changelog.js' ':(exclude).github'\"",
   "rewrites": [
-    { "source": "/((?!.*\\..*).*)", "destination": "/index.html" }
+    { "source": "/((?!.*\\..*)(?!ssh/|security/|network/|server/|data/|changelog).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

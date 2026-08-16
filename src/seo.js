@@ -104,3 +104,5 @@ function buildBreadcrumb(meta, path, t) {
   items.push({ '@type': 'ListItem', position: 3, name: t(meta.titleKey), item: SITE + path })
   return { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items }
 }
+
+export { SITE, seoMap }

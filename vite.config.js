@@ -11,9 +11,9 @@ export default defineConfig({
       injectRegister: 'script-defer',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'desktop.engineer — Outils pour ingénieurs système',
+        name: 'desktop.engineer — SSH, Network & Security Tools',
         short_name: 'de.tools',
-        description: 'Boîte à outils pour ingénieurs système — SSH, réseau, chiffrement et sécurité.',
+        description: 'Online toolkit for desktop engineers: SSH key permissions (chmod 600), networking, encryption and more. 100% in your browser.',
         theme_color: '#1d232a',
         background_color: '#1d232a',
         display: 'standalone',

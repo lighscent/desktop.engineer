@@ -34,7 +34,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-pwa-icons.mjs && vite build",
+    "build": "node scripts/generate-pwa-icons.mjs && vite build && node scripts/generate-static-pages.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
