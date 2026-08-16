@@ -81,6 +81,7 @@ pnpm install
 pnpm dev 
 
 # Build for production (outputs to dist/)
+# Also generates PWA icons + static per-route HTML shells for SEO
 pnpm build 
 
 # Preview the production build locally
@@ -98,6 +99,19 @@ The app currently supports French (fr) and English (en).
 - Usage example: t('namespace.key', { param: val }).
 
 *Pull requests to add new languages are always welcome!*
+
+---
+
+## Contributing
+
+Contributions are welcome! Please read our guidelines first:
+
+- [Contributing Guidelines](.github/CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md) — for reporting security vulnerabilities
+- [Support](.github/SUPPORT.md) — where to get help
+
+Found a bug or want a new tool? Open an [issue](https://github.com/lighscent/desktop.engineer/issues/new/choose) using the appropriate template.
 
 ---
 

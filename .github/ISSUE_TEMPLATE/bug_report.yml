@@ -4,7 +4,10 @@ labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: Thanks for taking the time to report a bug!
+      value: |
+        Thanks for taking the time to report a bug!
+
+        **Security vulnerability?** Do not open a public issue — report it privately via [GitHub Security Advisory](https://github.com/lighscent/desktop.engineer/security/advisories/new) (see [SECURITY.md](../../SECURITY.md)).
   - type: input
     id: tool
     attributes:

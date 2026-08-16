@@ -16,6 +16,6 @@
 
 ## Checklist
 
-- [ ] I have read the [contributing guidelines](../blob/main/.github/CONTRIBUTING.md)
+- [ ] I have read the [contributing guidelines](../blob/master/.github/CONTRIBUTING.md)
 - [ ] All user-facing strings use `t()` for i18n
 - [ ] The app builds without errors (`pnpm build`)

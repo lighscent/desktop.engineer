@@ -22,8 +22,13 @@ pnpm dev
 
 ## Before submitting a PR
 
-1. Make sure the app builds: `pnpm build`
-2. Update the `sitemap.xml` if you added a new route
+1. Make sure the app builds: `pnpm build` (also generates PWA icons + static per-route HTML shells)
+2. If you added a new route, update all of these:
+   - `src/router/index.js`
+   - `src/seo.js` (`seoMap` entry)
+   - `public/sitemap.xml`
+   - `scripts/generate-static-pages.mjs` (`NS_BY_PATH`, only if you want noscript SEO content)
+   - `vercel.json` (rewrite exclusion, if the route prefix changes)
 3. Update `AGENTS.md` if you added a new tool or changed the architecture
 
 ## PR checklist
@@ -38,13 +43,20 @@ pnpm dev
 src/
   App.vue              — shell (navbar, footer, router-view)
   main.js              — entry point
-  router/index.js      — routes (17 lazy + 1 eager)
+  router/index.js      — routes (18 lazy + 1 eager)
   stores/appStore.js   — reactive localStorage store
   i18n/index.js        — i18n composable
   i18n/locales/        — {fr,en}.js translation files
   views/               — one .vue per tool
   workers/             — Web Workers (hashWorker.js)
-  seo.js               — per-route SEO meta
+  seo.js               — per-route SEO meta (+ SITE/seoMap, used by the static pages generator)
+scripts/
+  generate-pwa-icons.mjs   — PWA icons, runs on build
+  generate-static-pages.mjs — per-route static HTML shells for SEO, runs on build
 ```
+
+## Security
+
+Security vulnerabilities must **not** be reported as public issues. See the [Security Policy](../SECURITY.md).
 
 Questions? Join the [Discord](https://discord.gg/YmA88jc7GF).
