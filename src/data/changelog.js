@@ -1,5 +1,26 @@
 export default [
   {
+  version: '0.1.8',
+  date: '2026-08-16',
+  title: { en: 'SEO overhaul, static pages & security policy', fr: 'Refonte SEO, pages statiques & politique de sécurité' },
+  changes: {
+    en: [
+      'Major SEO overhaul: keyword-rich titles/descriptions, JSON-LD structured data (WebSite, WebApplication, BreadcrumbList) and canonical URLs on every page',
+      'Build now generates static per-route HTML shells (English) so search engines see unique, indexable content for each tool page',
+      'Fixed the Vercel SPA rewrite to serve the static pages; PWA manifest updated to English',
+      'New SECURITY.md security policy — vulnerabilities are reported privately via GitHub Security Advisory',
+      'Added contributing guidelines and improved issue/PR templates',
+    ],
+    fr: [
+      'Refonte SEO majeure : titres/descriptions riches en mots-clés, données structurées JSON-LD (WebSite, WebApplication, BreadcrumbList) et URLs canoniques sur chaque page',
+      'Le build génère désormais des coquilles HTML statiques par route (anglais) pour un contenu unique et indexable sur chaque outil',
+      'Rewrite Vercel corrigé pour servir les pages statiques ; manifest PWA traduit en anglais',
+      'Nouvelle politique de sécurité SECURITY.md — les vulnérabilités se signalent en privé via GitHub Security Advisory',
+      'Ajout des guidelines de contribution et amélioration des templates issue/PR',
+    ],
+  },
+},
+  {
   version: '0.1.7',
   date: '2026-08-16',
   title: { en: 'New tool: Self-Signed SSL Certificate Generator', fr: 'Nouvel outil : Générateur de Certificat SSL Auto-signé' },
