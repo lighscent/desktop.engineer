@@ -61,6 +61,7 @@ const allTools = [
   { path: '/network/ip-info', title: 'Recherche IP' },
   { path: '/network/subnet-calculator', title: 'Calculateur de Subnet CIDR' },
   { path: '/server/nginx-generator', title: 'Générateur Nginx' },
+  { path: '/server/ssl-cert-generator', title: 'Certificat SSL Auto-signé' },
   { path: '/server/cron-generator', title: 'Générateur Cron' },
   { path: '/data/format-converter', title: 'Convertisseur JSON / YAML / CSV' },
   { path: '/data/linter-formatter', title: 'Linter JSON / YAML' },

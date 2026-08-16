@@ -13,6 +13,7 @@ const seoMap = {
   '/network/ip-info': { titleKey: 'tools.ipInfo.title', descKey: 'tools.ipInfo.desc' },
   '/network/subnet-calculator': { titleKey: 'tools.subnetCalculator.title', descKey: 'tools.subnetCalculator.desc' },
   '/server/nginx-generator': { titleKey: 'tools.nginxGenerator.title', descKey: 'tools.nginxGenerator.desc' },
+  '/server/ssl-cert-generator': { titleKey: 'tools.sslCertGenerator.title', descKey: 'tools.sslCertGenerator.desc' },
   '/server/cron-generator': { titleKey: 'tools.cronGenerator.title', descKey: 'tools.cronGenerator.desc' },
   '/data/format-converter': { titleKey: 'tools.formatConverter.title', descKey: 'tools.formatConverter.desc' },
   '/data/linter-formatter': { titleKey: 'tools.linterFormatter.title', descKey: 'tools.linterFormatter.desc' },

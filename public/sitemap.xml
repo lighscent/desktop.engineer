@@ -74,7 +74,13 @@
   </url>
   <url>
     <loc>https://desktop.engineer/server/nginx-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://desktop.engineer/server/ssl-cert-generator</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -38,7 +38,7 @@ pnpm dev
 src/
   App.vue              — shell (navbar, footer, router-view)
   main.js              — entry point
-  router/index.js      — routes (16 lazy + 1 eager)
+  router/index.js      — routes (17 lazy + 1 eager)
   stores/appStore.js   — reactive localStorage store
   i18n/index.js        — i18n composable
   i18n/locales/        — {fr,en}.js translation files

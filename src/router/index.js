@@ -24,6 +24,7 @@ const routes = [
 
   // Catégorie 4 : Serveur
   { path: '/server/nginx-generator', name: 'NginxGenerator', component: () => import('@/views/server/NginxGenerator.vue') },
+  { path: '/server/ssl-cert-generator', name: 'SslCertGenerator', component: () => import('@/views/server/SslCertGenerator.vue') },
   { path: '/server/cron-generator', name: 'CronGenerator', component: () => import('@/views/server/CronGenerator.vue') },
 
   // Catégorie 5 : Données & Dev

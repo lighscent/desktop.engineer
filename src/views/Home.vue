@@ -51,6 +51,7 @@ const toolKeys = [
     badge: 'badge-accent',
     tools: [
       { key: 'nginxGenerator', icon: 'fa-server', path: '/server/nginx-generator' },
+      { key: 'sslCertGenerator', icon: 'fa-certificate', path: '/server/ssl-cert-generator' },
       { key: 'cronGenerator', icon: 'fa-clock', path: '/server/cron-generator' },
     ],
   },

@@ -45,6 +45,7 @@ When managing server infrastructure, security and speed are critical. **desktop.
 
 ### Server
 - **[Nginx Generator](https://desktop.engineer/server/nginx-generator)** — Build solid configurations for reverse proxies, HTTPS, PHP, or static sites.
+- **[Self-Signed SSL Certificate Generator](https://desktop.engineer/server/ssl-cert-generator)** — Generate a local `.crt` with encrypted and plaintext keys in seconds.
 - **[Cron Generator](https://desktop.engineer/server/cron-generator)** — Visual and interactive crontab expression builder.
 
 ### Data & Dev Tools
@@ -61,7 +62,7 @@ This project is engineered for speed and simplicity, relying heavily on modern w
 - **Framework:** Vue 3 + Vue Router 5
 - **Styling:** Tailwind CSS v3 + DaisyUI v4
 - **Build Tool:** Vite 8
-- **Core Libraries:** `js-yaml`, `spark-md5`, `hash.js`
+- **Core Libraries:** `js-yaml`, `spark-md5`, `hash.js`, `@peculiar/x509`
 - **PWA Integration:** `vite-plugin-pwa` (Full offline support via Service Workers)
 
 ---

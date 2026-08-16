@@ -43,7 +43,7 @@ const { locale, t, setLocale } = useI18n()
 ## Architecture
 
 - **Entry**: `index.html` → `src/main.js` → `App.vue` + router
-- **16 tools**, each in `src/views/*.vue`, all lazy-loaded except Home
+- **17 tools**, each in `src/views/*.vue`, all lazy-loaded except Home
 - **Router**: `src/router/index.js` — `createWebHistory`, `scrollBehavior({ top: 0 })`
 - **Store**: `src/stores/appStore.js` — `reactive()` singleton, `useAppStore()` composable, localStorage-backed
 - **No server, no API, no analytics** — 100% client-side, zero back-end dependencies
@@ -51,6 +51,7 @@ const { locale, t, setLocale } = useI18n()
 ## Tool-specific gotchas
 
 - **SshKeyGenerator**: RSA/ECDSA via Web Crypto API (works in browser). Ed25519 → instructional `ssh-keygen` command only (not supported by browsers).
+- **SslCertGenerator**: Uses `@peculiar/x509` (requires `reflect-metadata` polyfill imported in main.js). Encrypted PKCS#8 (PBES2/PBKDF2-HMAC-SHA256 + AES-256-CBC) implemented in `src/utils/ssl.js` with Web Crypto — no extra dependency.
 - **PublicKeyAnalyzer**: Decodes binary OpenSSH blob client-side. Includes custom MD5 for fingerprints.
 - **HashChecker**: Files >50MB processed via Web Worker (`src/workers/hashWorker.js`) with chunked FileReader (1MB chunks). Small files use SubtleCrypto directly.
 - **FormatConverter/LinterFormatter**: Depend on `js-yaml` for JSON/YAML/CSV conversion.

@@ -54,6 +54,7 @@ const catKeys = [
     icon: 'fa-server',
     items: [
       { key: 'nginx', path: '/server/nginx-generator' },
+      { key: 'sslCert', path: '/server/ssl-cert-generator' },
       { key: 'cron', path: '/server/cron-generator' },
     ],
   },
