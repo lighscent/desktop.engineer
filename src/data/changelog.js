@@ -1,5 +1,18 @@
 export default [
   {
+  version: '0.1.7',
+  date: '2026-08-16',
+  title: { en: 'New tool: Self-Signed SSL Certificate Generator', fr: 'Nouvel outil : Générateur de Certificat SSL Auto-signé' },
+  changes: {
+    en: [
+      'New tool: Self-Signed SSL Certificate Generator — generate a .crt with encrypted (PBES2) and plaintext private keys'
+    ],
+    fr: [
+      'Nouvel outil : Générateur de Certificat SSL Auto-signé — génère un .crt avec clés privées chiffrée (PBES2) et non chiffrée'
+    ],
+  },
+},
+  {
     version: '0.1.6',
     date: '2026-08-15',
     title: { en: 'Security hardening & dependency refresh', fr: 'Durcissement sécurité & mise à jour des dépendances' },

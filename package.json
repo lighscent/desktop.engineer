@@ -1,6 +1,6 @@
 {
   "name": "desktop.engineer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "type": "module",
   "description": "Toolkit for system engineers — SSH, networking, encryption, and security. 100% client-side PWA.",
