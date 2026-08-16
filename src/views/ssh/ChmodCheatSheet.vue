@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from '@/i18n'
+import SeoText from '@/components/SeoText.vue'
 
 const rules = [
   {
@@ -133,5 +134,7 @@ function checkCustom() {
         <pre class="mockup-code p-3 text-sm overflow-x-auto">{{ customOutput }}</pre>
       </div>
     </div>
+
+    <SeoText ns="chmod" />
   </div>
 </template>

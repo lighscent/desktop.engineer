@@ -20,9 +20,9 @@
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/ssh-config-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/key-format-converter</loc>
@@ -32,15 +32,15 @@
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/ssh-install-assistant</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/chmod-cheat-sheet</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/security/password-generator</loc>
@@ -98,9 +98,9 @@
   </url>
   <url>
     <loc>https://desktop.engineer/data/linter-formatter</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/data/swiss-knife-encoder</loc>

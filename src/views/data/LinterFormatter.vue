@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { load, dump } from 'js-yaml'
 import { useI18n } from '@/i18n'
+import SeoText from '@/components/SeoText.vue'
 
 const { t } = useI18n()
 const mode = ref('json')
@@ -84,5 +85,7 @@ watch([mode, input], process, { immediate: true })
       <button class="btn btn-outline btn-sm" @click="copy"><i class="fas fa-copy mr-1"></i>{{ t('tools.linterFormatter.copy') }}</button>
       <span class="text-sm text-base-content/60 self-center">{{ t('tools.linterFormatter.validSyntax') }}</span>
     </div>
+
+    <SeoText ns="linter" />
   </div>
 </template>

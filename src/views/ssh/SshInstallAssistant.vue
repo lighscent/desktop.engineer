@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from '@/i18n'
+import SeoText from '@/components/SeoText.vue'
 
 const user = ref('root')
 const host = ref('192.168.1.100')
@@ -77,5 +78,7 @@ function copy() {
       </div>
       <pre class="mockup-code p-4 text-sm whitespace-pre-wrap overflow-x-auto">{{ command }}</pre>
     </div>
+
+    <SeoText ns="sshInstall" />
   </div>
 </template>

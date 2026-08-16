@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAppStore } from '@/stores/appStore'
 import { useI18n } from '@/i18n'
+import SeoText from '@/components/SeoText.vue'
 
 const router = useRouter()
 const store = useAppStore()
@@ -184,4 +185,6 @@ function handleStar(e, path) {
       </div>
     </div>
   </div>
+
+  <SeoText ns="home" />
 </template>
