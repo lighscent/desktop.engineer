@@ -70,36 +70,36 @@ function copy(text) {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.algorithm') }}</span></label>
-          <select v-model="keyType" class="select select-bordered font-mono text-sm">
+          <select v-model="keyType" class="select select-bordered font-mono text-sm w-full">
             <option value="rsa">RSA</option>
             <option value="ecdsa">ECDSA</option>
           </select>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ keyType === 'rsa' ? t('tools.sslCertGenerator.bits') : t('tools.sslCertGenerator.curve') }}</span></label>
-          <select v-if="keyType === 'rsa'" v-model.number="bits" class="select select-bordered font-mono text-sm">
+          <select v-if="keyType === 'rsa'" v-model.number="bits" class="select select-bordered font-mono text-sm w-full">
             <option :value="2048">2048</option>
             <option :value="4096">4096</option>
           </select>
-          <select v-else v-model="curve" class="select select-bordered font-mono text-sm">
+          <select v-else v-model="curve" class="select select-bordered font-mono text-sm w-full">
             <option value="P-256">P-256</option>
             <option value="P-384">P-384</option>
           </select>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.commonName') }}</span></label>
-          <input v-model="cn" class="input input-bordered font-mono text-sm" :placeholder="t('tools.sslCertGenerator.cnPlaceholder')" />
+          <input v-model="cn" class="input input-bordered font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.cnPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.validity') }}</span></label>
           <div class="flex items-center gap-2">
-            <input v-model.number="days" type="number" min="1" max="3650" class="input input-bordered font-mono text-sm w-full" />
+            <input v-model.number="days" type="number" min="1" max="3650" class="input input-bordered font-mono text-sm flex-1 min-w-0" />
             <span class="text-sm text-base-content/60 whitespace-nowrap">{{ t('tools.sslCertGenerator.days') }}</span>
           </div>
         </div>
         <div class="form-control md:col-span-2">
           <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.sans') }}</span></label>
-          <textarea v-model="sans" rows="2" class="textarea textarea-bordered font-mono text-sm" :placeholder="t('tools.sslCertGenerator.sansPlaceholder')"></textarea>
+          <textarea v-model="sans" rows="2" class="textarea textarea-bordered font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.sansPlaceholder')"></textarea>
           <label class="label"><span class="label-text text-xs text-base-content/50">{{ t('tools.sslCertGenerator.sansHint') }}</span></label>
         </div>
         <div class="md:col-span-2">
@@ -109,14 +109,16 @@ function copy(text) {
               <span class="label-text">{{ t('tools.sslCertGenerator.encryptKey') }}</span>
             </label>
           </div>
-          <div v-if="encrypt" class="flex items-center gap-2 mt-1">
-            <input :value="password" readonly class="input input-bordered input-sm font-mono text-sm flex-1 min-w-0" />
-            <button class="btn btn-outline btn-sm" @click="regeneratePassword" :title="t('tools.sslCertGenerator.regenerate')">
-              <i class="fas fa-dice mr-1"></i>{{ t('tools.sslCertGenerator.regenerate') }}
-            </button>
-            <button class="btn btn-ghost btn-sm" @click="copy(password)" :title="t('tools.sslCertGenerator.copy')">
-              <i class="fas fa-copy"></i>
-            </button>
+          <div v-if="encrypt" class="flex flex-col sm:flex-row sm:items-center gap-2 mt-1">
+            <input :value="password" readonly class="input input-bordered input-sm font-mono text-sm w-full sm:w-auto sm:flex-1 sm:min-w-0" />
+            <div class="flex gap-2">
+              <button class="btn btn-outline btn-sm" @click="regeneratePassword" :title="t('tools.sslCertGenerator.regenerate')">
+                <i class="fas fa-dice mr-1"></i>{{ t('tools.sslCertGenerator.regenerate') }}
+              </button>
+              <button class="btn btn-ghost btn-sm" @click="copy(password)" :title="t('tools.sslCertGenerator.copy')">
+                <i class="fas fa-copy"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
