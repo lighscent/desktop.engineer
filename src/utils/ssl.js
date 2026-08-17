@@ -1,4 +1,5 @@
 import * as x509 from '@peculiar/x509'
+import cryptoRandomString from 'crypto-random-string'
 
 const OID_PBES2 = '1.2.840.113549.1.5.13'
 const OID_PBKDF2 = '1.2.840.113549.1.5.12'
@@ -93,10 +94,7 @@ export function derToPem(der, label) {
 
 export function randomPassword(length = 20) {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*-_=+'
-  const bytes = crypto.getRandomValues(new Uint8Array(length))
-  let out = ''
-  for (let i = 0; i < length; i++) out += chars[bytes[i] % chars.length]
-  return out
+  return cryptoRandomString({ length, characters: chars })
 }
 
 function randomSerial() {

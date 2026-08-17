@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from '@/i18n'
+import cryptoRandomString from 'crypto-random-string'
 
 const { t } = useI18n()
 
@@ -40,9 +41,7 @@ function generate() {
     generated.value = t('tools.passwordGenerator.selectOne')
     return
   }
-  const arr = new Uint32Array(length.value)
-  crypto.getRandomValues(arr)
-  generated.value = Array.from(arr, x => charset.value[x % charset.value.length]).join('')
+  generated.value = cryptoRandomString({ length: length.value, characters: charset.value })
 }
 
 function copy() {
