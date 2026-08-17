@@ -1,5 +1,20 @@
 export default [
   {
+  version: '0.1.9',
+  date: '2026-08-17',
+  title: { en: 'Unbiased random generation (CWE-327)', fr: 'Génération aléatoire sans biais (CWE-327)' },
+  changes: {
+    en: [
+      'Fixed biased random generation in the SSL/password tools (CWE-327) by switching to crypto-random-string — rejection sampling, uniform distribution',
+      'CodeQL now scans the master branch (push and pull requests)',
+    ],
+    fr: [
+      'Correction du biais de génération aléatoire dans les outils SSL/mot de passe (CWE-327) via crypto-random-string — échantillonnage par rejet, distribution uniforme',
+      'CodeQL analyse désormais la branche master (push et pull requests)',
+    ],
+  },
+},
+  {
   version: '0.1.8',
   date: '2026-08-16',
   title: { en: 'SEO overhaul, static pages & security policy', fr: 'Refonte SEO, pages statiques & politique de sécurité' },
