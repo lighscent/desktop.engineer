@@ -98,19 +98,19 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="min-h-screen flex flex-col bg-base-100">
-    <div class="navbar bg-base-200/80 backdrop-blur-md border-b border-base-300 sticky top-0 z-50 px-4 flex-shrink-0">
+    <div class="navbar bg-base-200/80 backdrop-blur-md border-b border-base-300 sticky top-0 z-50 px-4 shrink-0">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost btn-square lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
             <i class="fas fa-bars text-lg"></i>
           </label>
           <ul v-if="mobileMenuOpen" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-base-200 rounded-box w-64 max-w-[calc(100vw-2rem)] border border-base-300">
-            <li><router-link to="/" :class="{ active: route.path === '/' }"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</router-link></li>
+            <li><router-link to="/" :class="{ 'menu-active': route.path === '/' }"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</router-link></li>
             <li v-for="cat in categories" :key="cat.name" class="menu-title mt-2">
               <span><i :class="'fas ' + cat.icon + ' w-5'"></i> {{ cat.name }}</span>
               <ul>
                 <li v-for="item in cat.items" :key="item.path">
-                  <router-link :to="item.path" :class="{ active: route.path === item.path }">{{ item.name }}</router-link>
+                  <router-link :to="item.path" :class="{ 'menu-active': route.path === item.path }">{{ item.name }}</router-link>
                 </li>
               </ul>
             </li>
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
               @mouseleave="closeDropdown()"
             >
               <li v-for="item in cat.items" :key="item.path">
-                <router-link :to="item.path" :class="{ active: route.path === item.path }">{{ item.name }}</router-link>
+                <router-link :to="item.path" :class="{ 'menu-active': route.path === item.path }">{{ item.name }}</router-link>
               </li>
             </ul>
           </li>
@@ -156,7 +156,7 @@ onBeforeUnmount(() => {
           <i class="fas fa-clock-rotate-left text-lg"></i>
         </router-link>
         <a href="https://github.com/lighscent/desktop.engineer" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-square" title="GitHub">
-          <i class="fab fa-github text-lg"></i>
+          <i class="fa-brands fa-github text-lg"></i>
         </a>
         <button class="btn btn-ghost btn-sm gap-1.5" @click="setLocale(locale === 'fr' ? 'en' : 'fr')">
           <i class="fas fa-globe text-sm"></i>
@@ -174,7 +174,7 @@ onBeforeUnmount(() => {
       <router-view />
     </main>
 
-    <footer class="flex flex-col items-center gap-1.5 px-4 py-5 bg-base-200 border-t border-base-300 text-sm text-base-content/60 flex-shrink-0">
+    <footer class="flex flex-col items-center gap-1.5 px-4 py-5 bg-base-200 border-t border-base-300 text-sm text-base-content/60 shrink-0">
       <div class="flex items-center gap-2">
         <span class="font-mono text-success text-xs">~/></span>
         <span>{{ t('footer.text') }}</span>
@@ -190,10 +190,10 @@ onBeforeUnmount(() => {
           <i class="fas fa-lightbulb text-xs"></i> {{ t('footer.suggestion') }}
         </a>
         <a href="https://github.com/lighscent/desktop.engineer" target="_blank" rel="noopener noreferrer" class="link link-hover inline-flex items-center gap-1.5">
-          <i class="fab fa-github text-xs"></i> GitHub
+          <i class="fa-brands fa-github text-xs"></i> GitHub
         </a>
         <a href="https://discord.gg/YmA88jc7GF" target="_blank" rel="noopener noreferrer" class="link link-hover inline-flex items-center gap-1.5 opacity-60 hover:opacity-100">
-          <i class="fab fa-discord text-xs"></i> {{ t('footer.discord') }}
+          <i class="fa-brands fa-discord text-xs"></i> {{ t('footer.discord') }}
         </a>
       </div>
     </footer>

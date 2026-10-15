@@ -66,14 +66,14 @@ generate()
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.envKeyGenerator.format') }}</span></label>
-          <select v-model="format" class="select select-bordered font-mono text-sm">
+          <select v-model="format" class="select font-mono text-sm">
             <option value="base64">{{ t('tools.envKeyGenerator.base64') }}</option>
             <option value="hex">{{ t('tools.envKeyGenerator.hex') }}</option>
           </select>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.envKeyGenerator.prefix') }}</span></label>
-          <input v-model="prefix" class="input input-bordered font-mono text-sm" :placeholder="t('tools.envKeyGenerator.prefixPlaceholder')" />
+          <input v-model="prefix" class="input font-mono text-sm" :placeholder="t('tools.envKeyGenerator.prefixPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label cursor-pointer justify-start gap-3">

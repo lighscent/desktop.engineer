@@ -86,7 +86,7 @@ function copyCmd() {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.keyType') }}</span></label>
-          <select v-model="keyType" class="select select-bordered font-mono text-sm">
+          <select v-model="keyType" class="select font-mono text-sm">
             <option value="ed25519">{{ t('tools.sshKeyGenerator.ed25519Label') }}</option>
             <option value="rsa">{{ t('tools.sshKeyGenerator.rsaLabel') }}</option>
             <option value="ecdsa">{{ t('tools.sshKeyGenerator.ecdsaLabel') }}</option>
@@ -94,14 +94,14 @@ function copyCmd() {
         </div>
         <div v-if="keyType === 'rsa'" class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.size') }}</span></label>
-          <select v-model.number="bits" class="select select-bordered font-mono text-sm">
+          <select v-model.number="bits" class="select font-mono text-sm">
             <option :value="2048">{{ t('tools.sshKeyGenerator.size2048') }}</option>
             <option :value="4096">{{ t('tools.sshKeyGenerator.size4096') }}</option>
           </select>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.comment') }}</span></label>
-          <input v-model="comment" class="input input-bordered font-mono text-sm" :placeholder="t('tools.sshKeyGenerator.userPlaceholder')" />
+          <input v-model="comment" class="input font-mono text-sm" :placeholder="t('tools.sshKeyGenerator.userPlaceholder')" />
         </div>
       </div>
     </div>

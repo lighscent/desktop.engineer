@@ -171,11 +171,11 @@ const formats = ['json', 'yaml', 'csv']
     <div class="grid gap-4 md:grid-cols-2 mb-4">
       <div class="form-control">
         <label class="label"><span class="label-text">{{ t('tools.formatConverter.input') }}</span></label>
-        <textarea v-model="input" class="textarea textarea-bordered font-mono text-sm min-h-40" :placeholder="t('tools.formatConverter.inputPlaceholder', { format: inputFormat.toUpperCase() })"></textarea>
+        <textarea v-model="input" class="textarea font-mono text-sm min-h-40" :placeholder="t('tools.formatConverter.inputPlaceholder', { format: inputFormat.toUpperCase() })"></textarea>
       </div>
       <div class="form-control">
         <label class="label"><span class="label-text">{{ t('tools.formatConverter.output') }}</span></label>
-        <textarea :value="output" class="textarea textarea-bordered font-mono text-sm min-h-40" readonly></textarea>
+        <textarea :value="output" class="textarea font-mono text-sm min-h-40" readonly></textarea>
       </div>
     </div>
 

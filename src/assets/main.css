@@ -1,3 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark --default, light;
+}
+
+/* Restore v4 theme palettes (v5 dark/light drifted brighter, cf. 0.1.9).
+ * Same-name blocks inherit all other values from the built-in theme. */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  color-scheme: dark;
+  --color-primary: oklch(65.69% 0.196 275.75);
+  --color-secondary: oklch(74.8% 0.26 342.55);
+  --color-accent: oklch(74.51% 0.167 183.61);
+  --color-neutral: #2a323c;
+  --color-neutral-content: #a6adbb;
+  --color-base-100: #1d232a;
+  --color-base-200: #191e24;
+  --color-base-300: #15191e;
+  --color-base-content: #a6adbb;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  color-scheme: light;
+  --color-primary: oklch(49.12% 0.3096 275.75);
+  --color-secondary: oklch(69.71% 0.329 342.55);
+  --color-secondary-content: oklch(98.71% 0.0106 342.55);
+  --color-accent: oklch(76.76% 0.184 183.61);
+  --color-neutral: #2b3440;
+  --color-neutral-content: #d7dde4;
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: #f2f2f2;
+  --color-base-300: #e5e6e6;
+  --color-base-content: #1f2937;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Menlo", "Monaco", monospace;
+}
+
+/* Compat: classes removed in DaisyUI v5 but still used across views */
+.form-control {
+  display: grid;
+  gap: 0.25rem;
+}
+.label-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.label-text-alt {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  opacity: 0.6;
+}

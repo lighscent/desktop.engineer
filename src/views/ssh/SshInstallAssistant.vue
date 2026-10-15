@@ -40,19 +40,19 @@ function copy() {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.user') }}</span></label>
-          <input v-model="user" class="input input-bordered font-mono" :placeholder="t('tools.sshInstallAssistant.userPlaceholder')" />
+          <input v-model="user" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.userPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.host') }}</span></label>
-          <input v-model="host" class="input input-bordered font-mono" :placeholder="t('tools.sshInstallAssistant.hostPlaceholder')" />
+          <input v-model="host" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.hostPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.port') }}</span></label>
-          <input v-model.number="port" type="number" class="input input-bordered font-mono" min="1" max="65535" />
+          <input v-model.number="port" type="number" class="input font-mono" min="1" max="65535" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.keyPath') }}</span></label>
-          <input v-model="keyPath" class="input input-bordered font-mono" :placeholder="t('tools.sshInstallAssistant.keyPlaceholder')" />
+          <input v-model="keyPath" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.keyPlaceholder')" />
         </div>
       </div>
       <div class="form-control mt-4">

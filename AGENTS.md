@@ -13,10 +13,11 @@ Always `pnpm`. No `npm` / `yarn`.
 ## Stack
 
 - **Vue 3** (`<script setup>`) + **Vue Router 4** (lazy routes, `createWebHistory`)
-- **Tailwind CSS v3** (not v4 — uses `tailwind.config.js` + `postcss.config.js`)
-- **DaisyUI v4** (not v5 — `require("daisyui")` in tailwind.config.js; theme toggle via `theme-controller` checkbox)
+- **Tailwind CSS v4** (CSS-first config in `src/assets/main.css` via `@import "tailwindcss"` + `@plugin "daisyui"`; `@theme` for fonts; Vite plugin `@tailwindcss/vite`)
+- **DaisyUI v5** (themes `dark --default, light` in CSS; active menu item = `menu-active`; `theme-controller` checkbox toggle; compat classes for removed `form-control` / `label-text` in `main.css`)
 - **Vite 8** + **vite-plugin-pwa** (service worker, offline support)
-- **No TypeScript, no test framework, no linter, no formatter**
+- **No TypeScript, no linter, no formatter**
+- Tests: `vitest` (`pnpm test`), specs in `tests/` (node env, alias `@` → `src/`)
 - Font Awesome 6 Free via CDN (`all.min.css`) for icons — no emojis in UI
 
 ## i18n

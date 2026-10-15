@@ -1,5 +1,22 @@
 export default [
   {
+  version: '0.1.10',
+  date: '2026-10-15',
+  title: { en: 'Tailwind v4, DaisyUI v5, security headers & test suite', fr: 'Tailwind v4, DaisyUI v5, headers sécurité & suite de tests' },
+  changes: {
+    en: [
+      'Migrated to Tailwind CSS v4 (CSS-first config, Vite plugin) and DaisyUI v5 — menu-active states, v4 theme palettes restored, Font Awesome brand icons fixed',
+      'Hardened HTTP security headers on Vercel: CSP, HSTS preload, X-Frame-Options DENY, nosniff, Referrer-Policy, Permissions-Policy, COOP',
+      'New vitest suite (8 tests): SSL utils, MD5/SHA-256 vectors, YAML safe-load defaults',
+    ],
+    fr: [
+      'Migration vers Tailwind CSS v4 (config CSS-first, plugin Vite) et DaisyUI v5 — états menu-active, palettes du thème v4 restaurées, icônes Font Awesome brands corrigées',
+      'Durcissement des headers HTTP sur Vercel : CSP, HSTS preload, X-Frame-Options DENY, nosniff, Referrer-Policy, Permissions-Policy, COOP',
+      'Nouvelle suite vitest (8 tests) : utils SSL, vecteurs MD5/SHA-256, défauts safe-load YAML',
+    ],
+  },
+},
+  {
   version: '0.1.9',
   date: '2026-08-17',
   title: { en: 'Unbiased random generation (CWE-327)', fr: 'Génération aléatoire sans biais (CWE-327)' },

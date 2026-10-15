@@ -38,7 +38,7 @@ function compare() {
         <label class="label"><span class="label-text">Clé / Empreinte A</span></label>
         <textarea
           v-model="keyA"
-          class="textarea textarea-bordered font-mono text-sm min-h-32"
+          class="textarea font-mono text-sm min-h-32"
           placeholder="ssh-ed25519 AAAA... (ou SHA256:... / MD5:...)"
         ></textarea>
       </div>
@@ -46,7 +46,7 @@ function compare() {
         <label class="label"><span class="label-text">Clé / Empreinte B</span></label>
         <textarea
           v-model="keyB"
-          class="textarea textarea-bordered font-mono text-sm min-h-32"
+          class="textarea font-mono text-sm min-h-32"
           placeholder="ssh-ed25519 AAAA... (ou SHA256:... / MD5:...)"
         ></textarea>
       </div>

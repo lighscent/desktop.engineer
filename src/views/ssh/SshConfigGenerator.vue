@@ -86,27 +86,27 @@ function applyTemplate(tpl) {
         <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.alias') }}</span></label>
-            <input v-model="h.host" class="input input-bordered input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.hostPlaceholder')" />
+            <input v-model="h.host" class="input input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.hostPlaceholder')" />
           </div>
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.hostname') }}</span></label>
-            <input v-model="h.hostname" class="input input-bordered input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.hostnamePlaceholder')" />
+            <input v-model="h.hostname" class="input input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.hostnamePlaceholder')" />
           </div>
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.user') }}</span></label>
-            <input v-model="h.user" class="input input-bordered input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.userPlaceholder')" />
+            <input v-model="h.user" class="input input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.userPlaceholder')" />
           </div>
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.port') }}</span></label>
-            <input v-model.number="h.port" type="number" class="input input-bordered input-sm font-mono" min="1" max="65535" />
+            <input v-model.number="h.port" type="number" class="input input-sm font-mono" min="1" max="65535" />
           </div>
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.identityFile') }}</span></label>
-            <input v-model="h.identityFile" class="input input-bordered input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.identityPlaceholder')" />
+            <input v-model="h.identityFile" class="input input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.identityPlaceholder')" />
           </div>
           <div class="form-control">
             <label class="label"><span class="label-text">{{ t('tools.sshConfigGenerator.extraOptions') }}</span></label>
-            <input v-model="h.extra" class="input input-bordered input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.extraPlaceholder')" />
+            <input v-model="h.extra" class="input input-sm font-mono" :placeholder="t('tools.sshConfigGenerator.extraPlaceholder')" />
           </div>
         </div>
         <button class="btn btn-outline btn-error btn-sm mt-3" @click="removeHost(idx)">{{ t('tools.sshConfigGenerator.remove') }}</button>

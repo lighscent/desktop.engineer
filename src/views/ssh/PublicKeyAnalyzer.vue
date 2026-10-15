@@ -134,7 +134,7 @@ function copy(text) {
       <label class="label"><span class="label-text">{{ t('tools.publicKeyAnalyzer.keyInput') }}</span></label>
       <textarea
         v-model="rawKey"
-        class="textarea textarea-bordered font-mono text-sm min-h-28"
+        class="textarea font-mono text-sm min-h-28"
         :placeholder="t('tools.publicKeyAnalyzer.keyPlaceholder')"
         @input="analyze"
       ></textarea>

@@ -65,14 +65,14 @@ function copy() {
       <div class="grid gap-4 md:grid-cols-3 mb-6">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.mode') }}</span></label>
-          <select v-model="mode" class="select select-bordered font-mono text-sm" @change="process">
+          <select v-model="mode" class="select font-mono text-sm" @change="process">
             <option value="encode">{{ t('tools.swissKnifeEncoder.encode') }}</option>
             <option value="decode">{{ t('tools.swissKnifeEncoder.decode') }}</option>
           </select>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.type') }}</span></label>
-          <select v-model="type" class="select select-bordered font-mono text-sm" @change="process">
+          <select v-model="type" class="select font-mono text-sm" @change="process">
             <option value="url">{{ t('tools.swissKnifeEncoder.url') }}</option>
             <option value="base64">{{ t('tools.swissKnifeEncoder.base64') }}</option>
             <option value="html">{{ t('tools.swissKnifeEncoder.htmlEntities') }}</option>
@@ -84,11 +84,11 @@ function copy() {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.input') }}</span></label>
-          <textarea v-model="input" class="textarea textarea-bordered font-mono text-sm min-h-28" @input="process"></textarea>
+          <textarea v-model="input" class="textarea font-mono text-sm min-h-28" @input="process"></textarea>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.output') }}</span></label>
-          <textarea :value="output" class="textarea textarea-bordered font-mono text-sm min-h-28" readonly></textarea>
+          <textarea :value="output" class="textarea font-mono text-sm min-h-28" readonly></textarea>
         </div>
       </div>
     </div>

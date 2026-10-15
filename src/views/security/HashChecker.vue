@@ -151,13 +151,13 @@ const hashes = [
       <div v-if="mode === 'text'">
         <textarea
           v-model="input"
-          class="textarea textarea-bordered font-mono text-sm min-h-28 w-full"
+          class="textarea font-mono text-sm min-h-28 w-full"
           :placeholder="t('tools.hashChecker.textPlaceholder')"
           @input="computeText"
         ></textarea>
       </div>
       <div v-else>
-        <input type="file" class="file-input file-input-bordered w-full" @change="handleFile" />
+        <input type="file" class="file-input file-input w-full" @change="handleFile" />
         <p v-if="fileName" class="text-xs text-base-content/50 mt-2"><i class="fas fa-file mr-1"></i>{{ fileName }}</p>
       </div>
     </div>

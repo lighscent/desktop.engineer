@@ -109,7 +109,7 @@ function handleStar(e, path) {
       rel="noopener noreferrer"
       class="btn btn-outline btn-sm gap-2 whitespace-nowrap"
     >
-      <i class="fab fa-github text-base"></i>
+      <i class="fa-brands fa-github text-base"></i>
       <span class="hidden sm:inline">{{ t('home.github') }}</span>
       <span class="inline sm:hidden">Open-Source Project</span>
     </a>

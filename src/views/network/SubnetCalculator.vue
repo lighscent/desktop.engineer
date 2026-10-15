@@ -77,7 +77,7 @@ function calculate() {
       <div class="flex gap-3">
         <input
           v-model="input"
-          class="input input-bordered font-mono flex-1"
+          class="input font-mono flex-1"
           :placeholder="t('tools.subnetCalculator.cidrPlaceholder')"
           @keyup.enter="calculate"
         />

@@ -68,7 +68,7 @@ function doLookup() {
       <div class="flex gap-3">
         <input
           v-model="ip"
-          class="input input-bordered font-mono flex-1"
+          class="input font-mono flex-1"
           :placeholder="t('tools.ipInfo.ipPlaceholder')"
           @keyup.enter="doLookup"
         />

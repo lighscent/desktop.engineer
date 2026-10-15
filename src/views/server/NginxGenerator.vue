@@ -145,19 +145,19 @@ function copy() {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.domain') }}</span></label>
-          <input v-model="domain" class="input input-bordered font-mono" :placeholder="t('tools.nginxGenerator.domainPlaceholder')" />
+          <input v-model="domain" class="input font-mono" :placeholder="t('tools.nginxGenerator.domainPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.backendIp') }}</span></label>
-          <input v-model="ip" class="input input-bordered font-mono" :disabled="siteType === 'static'" :placeholder="t('tools.nginxGenerator.ipPlaceholder')" />
+          <input v-model="ip" class="input font-mono" :disabled="siteType === 'static'" :placeholder="t('tools.nginxGenerator.ipPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.backendPort') }}</span></label>
-          <input v-model.number="port" type="number" class="input input-bordered font-mono" :disabled="siteType === 'static'" min="1" max="65535" />
+          <input v-model.number="port" type="number" class="input font-mono" :disabled="siteType === 'static'" min="1" max="65535" />
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.root') }}</span></label>
-          <input v-model="rootDir" class="input input-bordered font-mono" :placeholder="t('tools.nginxGenerator.rootPlaceholder')" />
+          <input v-model="rootDir" class="input font-mono" :placeholder="t('tools.nginxGenerator.rootPlaceholder')" />
         </div>
       </div>
 
@@ -204,7 +204,7 @@ function copy() {
       <div v-if="php" class="mt-3 md:w-1/2">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.phpBackend') }}</span></label>
-          <input v-model="phpBackend" class="input input-bordered font-mono input-sm" :placeholder="t('tools.nginxGenerator.phpBackendPlaceholder')" />
+          <input v-model="phpBackend" class="input font-mono input-sm" :placeholder="t('tools.nginxGenerator.phpBackendPlaceholder')" />
         </div>
       </div>
     </div>

@@ -95,7 +95,7 @@ function copy() {
         <label class="label"><span class="label-text">{{ t('tools.keyFormatConverter.pasteKey') }}</span></label>
         <textarea
           v-model="keyInput"
-          class="textarea textarea-bordered font-mono text-sm min-h-32"
+          class="textarea font-mono text-sm min-h-32"
           :placeholder="t('tools.keyFormatConverter.keyPlaceholder')"
         ></textarea>
       </div>

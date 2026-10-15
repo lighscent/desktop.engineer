@@ -53,27 +53,27 @@ function copy() {
       <div v-if="preset === 'custom'" class="grid gap-3 md:grid-cols-5">
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.cronGenerator.minute') }}</span></label>
-          <input v-model="customMinute" class="input input-bordered font-mono text-center" placeholder="0" />
+          <input v-model="customMinute" class="input font-mono text-center" placeholder="0" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.minuteRange') }}</span>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.cronGenerator.hour') }}</span></label>
-          <input v-model="customHour" class="input input-bordered font-mono text-center" placeholder="*" />
+          <input v-model="customHour" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.hourRange') }}</span>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.cronGenerator.dayOfMonth') }}</span></label>
-          <input v-model="customDay" class="input input-bordered font-mono text-center" placeholder="*" />
+          <input v-model="customDay" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.dayRange') }}</span>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.cronGenerator.month') }}</span></label>
-          <input v-model="customMonth" class="input input-bordered font-mono text-center" placeholder="*" />
+          <input v-model="customMonth" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.monthRange') }}</span>
         </div>
         <div class="form-control">
           <label class="label"><span class="label-text">{{ t('tools.cronGenerator.dayOfWeek') }}</span></label>
-          <input v-model="customWeekday" class="input input-bordered font-mono text-center" placeholder="*" />
+          <input v-model="customWeekday" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.weekRange') }}</span>
         </div>
       </div>
