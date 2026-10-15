@@ -1,2 +1,7 @@
+minimumReleaseAgeExclude:
+  - '@vitest/mocker@5.0.5'
+  - '@vitest/spy@5.0.5'
+  - vitest@5.0.5
+  - '@peculiar/x509@2.2.0'
 overrides:
   nanoid: ^5.1.16
