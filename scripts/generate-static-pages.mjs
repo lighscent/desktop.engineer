@@ -69,7 +69,7 @@ function noscript(meta, path, title, desc) {
   ]
 
   if (ns) {
-    const points = Array.from({ length: parseInt(t(`seo.${ns}.pointsCount`), 10) || 0 }, (_, i) => t(`seo.${ns}.p${i + 1}`))
+    const points = Array.from({ length: Number.parseInt(t(`seo.${ns}.pointsCount`), 10) || 0 }, (_, i) => t(`seo.${ns}.p${i + 1}`))
     parts.push(
       `<h2>${escapeHtml(t(`seo.${ns}.h2`))}</h2>`,
       `<p>${escapeHtml(t(`seo.${ns}.intro`))}</p>`,
