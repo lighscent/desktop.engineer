@@ -17,7 +17,7 @@ function generate() {
 
   let key
   if (format.value === 'base64') {
-    key = btoa(String.fromCharCode(...raw)).substring(0, length.value)
+    key = btoa(String.fromCodePoint(...raw)).substring(0, length.value)
   } else {
     key = Array.from(raw, b => b.toString(16).padStart(2, '0')).join('').substring(0, length.value)
   }

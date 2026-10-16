@@ -127,7 +127,7 @@ function unflatten(flat) {
 function escapeCSV(val) {
   if (val === null || val === undefined) return ''
   const s = String(val)
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+  return /[",\n]/.test(s) ? `"${s.replaceAll('"', '""')}"` : s
 }
 
 function toCSV(data) {

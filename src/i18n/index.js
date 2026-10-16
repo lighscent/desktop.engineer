@@ -18,7 +18,7 @@ function t(key, params = {}) {
     else return key
   }
   if (typeof val !== 'string') return key
-  return val.replace(/\{(\w+)\}/g, (_, k) => params[k] !== undefined ? params[k] : `{${k}}`)
+  return val.replaceAll(/\{(\w+)\}/g, (_, k) => params[k] !== undefined ? params[k] : `{${k}}`)
 }
 
 function setLocale(l) {

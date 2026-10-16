@@ -87,7 +87,7 @@ function concat(...arrays) {
 }
 
 export function derToPem(der, label) {
-  const b64 = btoa(String.fromCharCode(...new Uint8Array(der)))
+  const b64 = btoa(String.fromCodePoint(...new Uint8Array(der)))
   const lines = b64.match(/.{1,64}/g) || []
   return `-----BEGIN ${label}-----\n${lines.join('\n')}\n-----END ${label}-----`
 }
@@ -131,7 +131,7 @@ export async function generateSelfSignedCert({ type, bits, curve, cn, sans, days
 
   const cert = await x509.X509CertificateGenerator.createSelfSigned({
     serialNumber: randomSerial(),
-    name: `CN=${cn.replace(/([,\\])/g, '\\$1')}`,
+    name: `CN=${cn.replaceAll(/([,\\])/g, '\\$1')}`,
     notBefore: new Date(Date.now() - 60 * 1000),
     notAfter: new Date(Date.now() + days * 24 * 60 * 60 * 1000),
     signingAlgorithm,

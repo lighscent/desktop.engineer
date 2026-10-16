@@ -12,10 +12,10 @@ const error = ref('')
 const htmlEntityMap = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", '#x27': "'", '#x2F': '/', '#x60': '`', '#x3D': '=', nbsp: '\u00A0' }
 
 function decodeHtmlEntities(str) {
-  return str.replace(/&(#\d+|#x[\da-fA-F]+|\w+);/g, (_, entity) => {
+  return str.replaceAll(/&(#\d+|#x[\da-fA-F]+|\w+);/g, (_, entity) => {
     if (htmlEntityMap[entity]) return htmlEntityMap[entity]
-    if (entity.startsWith('#x')) return String.fromCharCode(Number.parseInt(entity.slice(2), 16))
-    if (entity.startsWith('#')) return String.fromCharCode(Number.parseInt(entity.slice(1)))
+    if (entity.startsWith('#x')) return String.fromCodePoint(Number.parseInt(entity.slice(2), 16))
+    if (entity.startsWith('#')) return String.fromCodePoint(Number.parseInt(entity.slice(1)))
     return _
   })
 }
@@ -29,7 +29,7 @@ function process() {
       switch (type.value) {
         case 'url': output.value = encodeURIComponent(val); break
         case 'base64': output.value = btoa(val); break
-        case 'html': output.value = val.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); break
+        case 'html': output.value = val.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;'); break
         case 'hex': output.value = Array.from(new TextEncoder().encode(val), b => b.toString(16).padStart(2, '0')).join(' '); break
       }
     } else {

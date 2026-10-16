@@ -41,14 +41,14 @@ async function generate() {
 
 async function exportSPKI(key) {
   const raw = await crypto.subtle.exportKey('spki', key)
-  const b64 = btoa(String.fromCharCode(...new Uint8Array(raw)))
+  const b64 = btoa(String.fromCodePoint(...new Uint8Array(raw)))
   const lines = b64.match(/.{1,64}/g) || []
   return `-----BEGIN PUBLIC KEY-----\n${lines.join('\n')}\n-----END PUBLIC KEY-----`
 }
 
 async function exportPKCS8(key) {
   const raw = await crypto.subtle.exportKey('pkcs8', key)
-  const b64 = btoa(String.fromCharCode(...new Uint8Array(raw)))
+  const b64 = btoa(String.fromCodePoint(...new Uint8Array(raw)))
   const lines = b64.match(/.{1,64}/g) || []
   return `-----BEGIN PRIVATE KEY-----\n${lines.join('\n')}\n-----END PRIVATE KEY-----`
 }

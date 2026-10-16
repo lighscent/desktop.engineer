@@ -23,7 +23,7 @@ function readLength(buf, offset) {
 
 function readString(buf, offset) {
   const { len, offset: newOff } = readLength(buf, offset)
-  const str = String.fromCharCode(...buf.slice(newOff, newOff + len))
+  const str = String.fromCodePoint(...buf.slice(newOff, newOff + len))
   return { str, offset: newOff + len }
 }
 
@@ -102,7 +102,7 @@ async function analyze() {
     const sha256 = await crypto.subtle.digest('SHA-256', raw)
     const md5Arr = md5Bytes(raw)
     fingerprints = {
-      sha256: 'SHA256:' + btoa(String.fromCharCode(...new Uint8Array(sha256).slice(0, 32))),
+      sha256: 'SHA256:' + btoa(String.fromCodePoint(...new Uint8Array(sha256).slice(0, 32))),
       md5: 'MD5:' + Array.from(md5Arr, b => b.toString(16).padStart(2, '0')).join(':'),
     }
   } catch {
