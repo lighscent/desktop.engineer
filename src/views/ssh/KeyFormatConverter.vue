@@ -8,21 +8,16 @@ const result = ref('')
 
 const { t } = useI18n()
 
-function detect() {
-  if (!keyInput.value.trim()) { result.value = ''; return }
+function detectFormat(text) {
+  if (/^PuTTY-User-Key-File-2/m.test(text)) return 'putty'
+  if (/^-{5}BEGIN.*PRIVATE KEY-{5}/m.test(text)) return 'openssh'
+  if (/^ssh-(rsa|ed25519|dss|ecdsa)/m.test(text)) return 'openssh-pub'
+  return 'inconnu'
+}
 
-  const text = keyInput.value
-  let detected = ''
-  if (/^PuTTY-User-Key-File-2/m.test(text)) detected = 'putty'
-  else if (/^-{5}BEGIN.*PRIVATE KEY-{5}/m.test(text)) detected = 'openssh'
-  else if (/^ssh-(rsa|ed25519|dss|ecdsa)/m.test(text)) detected = 'openssh-pub'
-  else detected = 'inconnu'
-
-  const dir = direction.value
-
-  if (dir === 'openssh-to-putty') {
-    if (detected.startsWith('openssh')) {
-      result.value = `# Conversion OpenSSH → PuTTY (.ppk)
+function opensshToPuttyGuide(detected) {
+  if (detected.startsWith('openssh')) {
+    return `# Conversion OpenSSH → PuTTY (.ppk)
 # Méthode 1 : avec PuTTYgen (Windows)
 #   1. Ouvrez PuTTYgen
 #   2. Conversions → Import key
@@ -37,14 +32,14 @@ ssh-keygen -p -m PEM -f id_rsa
 puttygen id_rsa -o id_rsa.ppk
 
 # ${detected === 'openssh-pub' ? t('tools.keyFormatConverter.detectedPublic') : t('tools.keyFormatConverter.detectedPrivate')}`
-    } else if (detected === 'putty') {
-      result.value = t('tools.keyFormatConverter.alreadyPutty')
-    } else {
-      result.value = t('tools.keyFormatConverter.notRecognized')
-    }
-  } else {
-    if (detected === 'putty') {
-      result.value = `# Conversion PuTTY (.ppk) → OpenSSH
+  }
+  if (detected === 'putty') return t('tools.keyFormatConverter.alreadyPutty')
+  return t('tools.keyFormatConverter.notRecognized')
+}
+
+function puttyToOpensshGuide(detected) {
+  if (detected === 'putty') {
+    return `# Conversion PuTTY (.ppk) → OpenSSH
 # Méthode 1 : avec PuTTYgen (Windows)
 #   1. Ouvrez PuTTYgen
 #   2. File → Load private key
@@ -58,12 +53,18 @@ sudo apt install putty-tools
 puttygen id_rsa.ppk -O private-openssh -o id_rsa
 
 # ${t('tools.keyFormatConverter.detectedPutty')}`
-    } else if (detected.startsWith('openssh')) {
-      result.value = t('tools.keyFormatConverter.alreadyOssh')
-    } else {
-      result.value = t('tools.keyFormatConverter.notRecognizedPutty')
-    }
   }
+  if (detected.startsWith('openssh')) return t('tools.keyFormatConverter.alreadyOssh')
+  return t('tools.keyFormatConverter.notRecognizedPutty')
+}
+
+function detect() {
+  if (!keyInput.value.trim()) { result.value = ''; return }
+
+  const detected = detectFormat(keyInput.value)
+  result.value = direction.value === 'openssh-to-putty'
+    ? opensshToPuttyGuide(detected)
+    : puttyToOpensshGuide(detected)
 }
 
 function copy() {

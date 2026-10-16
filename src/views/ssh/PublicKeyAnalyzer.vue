@@ -39,6 +39,44 @@ function md5Bytes(data) {
   return arr
 }
 
+function parseDetails(algorithm, raw, offset) {
+  if (algorithm === 'ssh-rsa') {
+    const e = readBigIntBytes(raw, offset)
+    const n = readBigIntBytes(raw, e.offset)
+    const keySize = n.bytes.length * 8
+    return { details: { exponent: e.bytes.length + ' octets', modulus: keySize + ' bits' }, keySize }
+  }
+  if (algorithm === 'ssh-ed25519') {
+    readBigIntBytes(raw, offset)
+    return { details: { courbe: 'Ed25519', taille: '256 bits' }, keySize: 256 }
+  }
+  if (algorithm === 'ecdsa-sha2-nistp256' || algorithm === 'ecdsa-sha2-nistp384' || algorithm === 'ecdsa-sha2-nistp521') {
+    const bits = Number.parseInt(algorithm.slice(-3), 10)
+    const c = readString(raw, offset)
+    readBigIntBytes(raw, c.offset)
+    return { details: { courbe: c.str, taille: bits + ' bits' }, keySize: bits }
+  }
+  if (algorithm.startsWith('ecdsa-sha2-')) {
+    try {
+      const c = readString(raw, offset)
+      const q = readBigIntBytes(raw, c.offset)
+      const keySize = q.bytes.length * 4
+      return { details: { courbe: c.str, taille: keySize + ' bits' }, keySize }
+    } catch {
+      return { details: { info: 'Algorithme ECDSA reconnu mais clé non décodable' }, keySize: 0 }
+    }
+  }
+  if (algorithm === 'sk-ssh-ed25519@openssh.com') {
+    readBigIntBytes(raw, offset)
+    return { details: { courbe: 'Ed25519 (security key)', taille: '256 bits' }, keySize: 256 }
+  }
+  if (algorithm === 'ssh-dss') {
+    const p = readBigIntBytes(raw, offset)
+    return { details: { 'taille p': p.bytes.length * 8 + ' bits' }, keySize: p.bytes.length * 8 }
+  }
+  return { details: { info: `Algorithme "${algorithm}" reconnu mais analyse non implémentée` }, keySize: 0 }
+}
+
 async function analyze() {
   const key = rawKey.value.trim()
   if (!key) { result.value = null; return }
@@ -74,28 +112,7 @@ async function analyze() {
   }
   offset = algoRead.offset
 
-  let details = {}
-  let keySize = 0
-
-  if (algorithm === 'ssh-rsa') {
-    const e = readBigIntBytes(raw, offset); offset = e.offset
-    const n = readBigIntBytes(raw, offset); offset = n.offset
-    keySize = n.bytes.length * 8
-    details = { exponent: e.bytes.length + ' octets', modulus: keySize + ' bits' }
-  } else if (algorithm === 'ssh-ed25519') {
-    const pk = readBigIntBytes(raw, offset); offset = pk.offset
-    keySize = 256
-    details = { courbe: 'Ed25519', taille: '256 bits' }
-  } else if (algorithm === 'ecdsa-sha2-nistp256') { const c = readString(raw, offset); offset = c.offset; const q = readBigIntBytes(raw, offset); offset = q.offset; keySize = 256; details = { courbe: c.str, taille: keySize + ' bits' } }
-  else if (algorithm === 'ecdsa-sha2-nistp384') { const c = readString(raw, offset); offset = c.offset; const q = readBigIntBytes(raw, offset); offset = q.offset; keySize = 384; details = { courbe: c.str, taille: keySize + ' bits' } }
-  else if (algorithm === 'ecdsa-sha2-nistp521') { const c = readString(raw, offset); offset = c.offset; const q = readBigIntBytes(raw, offset); offset = q.offset; keySize = 521; details = { courbe: c.str, taille: keySize + ' bits' } }
-  else if (algorithm.startsWith('ecdsa-sha2-')) { try { const c = readString(raw, offset); offset = c.offset; const q = readBigIntBytes(raw, offset); offset = q.offset; keySize = q.bytes.length * 4; details = { courbe: c.str, taille: keySize + ' bits' } } catch { details = { info: 'Algorithme ECDSA reconnu mais clé non décodable' } } }
-  else if (algorithm === 'sk-ssh-ed25519@openssh.com') { const pk = readBigIntBytes(raw, offset); offset = pk.offset; keySize = 256; details = { courbe: 'Ed25519 (security key)', taille: '256 bits' } }
-  else if (algorithm === 'ssh-dss') { const p = readBigIntBytes(raw, offset); offset = p.offset; const q = readBigIntBytes(raw, offset); offset = q.offset; const g = readBigIntBytes(raw, offset); offset = g.offset; const pub = readBigIntBytes(raw, offset); offset = pub.offset; keySize = p.bytes.length * 8; details = { 'taille p': p.bytes.length * 8 + ' bits' } }
-  else {
-    details = { info: `Algorithme "${algorithm}" reconnu mais analyse non implémentée` }
-    keySize = 0
-  }
+  const { details, keySize } = parseDetails(algorithm, raw, offset)
 
   let fingerprints = {}
   try {
