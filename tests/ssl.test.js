@@ -15,7 +15,7 @@ describe('ssl utils', () => {
   it('randomPassword respects length and charset', () => {
     const pwd = randomPassword(32)
     expect(pwd).toHaveLength(32)
-    expect(pwd).toMatch(/^[ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*-_=+]+$/)
+    expect(pwd).toMatch(/^[ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*\-_=+]+$/)
     expect(randomPassword(20)).not.toBe(randomPassword(20))
   })
 
