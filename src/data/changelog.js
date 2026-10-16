@@ -1,5 +1,24 @@
 export default [
   {
+  version: '0.1.11',
+  date: '2026-10-16',
+  title: { en: 'CVE patches, CodeQL & SonarQube hardening', fr: 'Correctifs CVE, durcissement CodeQL & SonarQube' },
+  changes: {
+    en: [
+      'Patched transitive DoS advisories: source-map-js 1.2.2, fast-uri 3.1.8, brace-expansion 5.0.12 (scoped override under minimatch 10)',
+      'CodeQL fixes: escaped dash in password charset regex, pinned release action to full commit SHA, documented SHA-1/MD5 checksum-only scope with user-facing legacy warning',
+      'Added sonar-project.properties — i18n locales and changelog excluded from duplication detection',
+      'Enforced Number.parseInt over parseInt for consistency',
+    ],
+    fr: [
+      'Correctifs DoS transitifs : source-map-js 1.2.2, fast-uri 3.1.8, brace-expansion 5.0.12 (override ciblé sous minimatch 10)',
+      'Correctifs CodeQL : tiret échappé dans la regex des mots de passe, action de release épinglée sur SHA complet, portée checksum-only de SHA-1/MD5 documentée avec avertissement utilisateur',
+      'Ajout de sonar-project.properties — locales i18n et changelog exclus de la détection de duplication',
+      'Number.parseInt imposé au lieu de parseInt par cohérence',
+    ],
+  },
+},
+  {
   version: '0.1.10',
   date: '2026-10-15',
   title: { en: 'Tailwind v4, DaisyUI v5, security headers & test suite', fr: 'Tailwind v4, DaisyUI v5, headers sécurité & suite de tests' },
