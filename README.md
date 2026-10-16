@@ -27,7 +27,7 @@ When managing server infrastructure, security and speed are critical. **desktop.
 ## The Tools
 
 ### SSH & Remote Access
-- **[SSH Key Generator](https://desktop.engineer/ssh/ssh-key-generator)** — Generate secure RSA/ECDSA keys directly in the browser.
+- **[SSH Key Generator](https://desktop.engineer/ssh/ssh-key-generator)** — Generate secure RSA/ECDSA/Ed25519 keys directly in the browser.
 - **[Public Key Inspector](https://desktop.engineer/ssh/public-key-analyzer)** — Analyze algorithms, bit size, and extract MD5/SHA-256 fingerprints.
 - **[~/.ssh/config Generator](https://desktop.engineer/ssh/ssh-config-generator)** — Clean, multi-host SSH config builder.
 - **[OpenSSH ↔ PuTTY Converter](https://desktop.engineer/ssh/key-format-converter)** — Quick conversion instructions and formatting.
@@ -60,7 +60,7 @@ When managing server infrastructure, security and speed are critical. **desktop.
 This project is engineered for speed and simplicity, relying heavily on modern web standards and native browser APIs:
 
 - **Framework:** Vue 3 + Vue Router 5
-- **Styling:** Tailwind CSS v3 + DaisyUI v4
+- **Styling:** Tailwind CSS v4 + DaisyUI v5
 - **Build Tool:** Vite 8
 - **Core Libraries:** `js-yaml`, `spark-md5`, `hash.js`, `@peculiar/x509`
 - **PWA Integration:** `vite-plugin-pwa` (Full offline support via Service Workers)
@@ -86,6 +86,9 @@ pnpm build
 
 # Preview the production build locally
 pnpm preview
+
+# Run the test suite (vitest)
+pnpm test
 ```
 
 ---
