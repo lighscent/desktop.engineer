@@ -9,6 +9,7 @@ const NS_BY_PATH = {
   '/': 'home',
   '/ssh/chmod-cheat-sheet': 'chmod',
   '/ssh/ssh-install-assistant': 'sshInstall',
+  '/ssh/key-format-converter': 'putty',
   '/data/linter-formatter': 'linter',
 }
 
@@ -56,6 +57,20 @@ function jsonLd(meta, path, desc) {
     publisher: { '@type': 'Organization', name: 'desktop.engineer', url: SITE + '/' },
   })
 
+  const ns = NS_BY_PATH[path]
+  const faqCount = ns ? Number.parseInt(t(`seo.${ns}.faqCount`), 10) || 0 : 0
+  if (faqCount > 0) {
+    graphs.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: Array.from({ length: faqCount }, (_, i) => ({
+        '@type': 'Question',
+        name: t(`seo.${ns}.q${i + 1}`),
+        acceptedAnswer: { '@type': 'Answer', text: t(`seo.${ns}.a${i + 1}`) },
+      })),
+    })
+  }
+
   return graphs
 }
 
@@ -78,6 +93,13 @@ function noscript(meta, path, title, desc) {
       '</ul>',
       `<p>${escapeHtml(t(`seo.${ns}.outro`))}</p>`
     )
+    const faqCount = Number.parseInt(t(`seo.${ns}.faqCount`), 10) || 0
+    if (faqCount > 0) {
+      parts.push('<h2>FAQ</h2>')
+      for (let i = 1; i <= faqCount; i++) {
+        parts.push(`<h3>${escapeHtml(t(`seo.${ns}.q${i}`))}</h3>`, `<p>${escapeHtml(t(`seo.${ns}.a${i}`))}</p>`)
+      }
+    }
   }
 
   parts.push('<h2>All tools</h2>', '<ul>')
