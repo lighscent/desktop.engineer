@@ -69,38 +69,38 @@ function copy(text) {
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.algorithm') }}</span></label>
-          <select v-model="keyType" class="select font-mono text-sm w-full">
+          <label class="label" for="ssl-algorithm"><span class="label-text">{{ t('tools.sslCertGenerator.algorithm') }}</span></label>
+          <select v-model="keyType" id="ssl-algorithm" class="select font-mono text-sm w-full">
             <option value="rsa">RSA</option>
             <option value="ecdsa">ECDSA</option>
           </select>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ keyType === 'rsa' ? t('tools.sslCertGenerator.bits') : t('tools.sslCertGenerator.curve') }}</span></label>
-          <select v-if="keyType === 'rsa'" v-model.number="bits" class="select font-mono text-sm w-full">
+          <label class="label" for="ssl-size"><span class="label-text">{{ keyType === 'rsa' ? t('tools.sslCertGenerator.bits') : t('tools.sslCertGenerator.curve') }}</span></label>
+          <select v-if="keyType === 'rsa'" v-model.number="bits" id="ssl-size" class="select font-mono text-sm w-full">
             <option :value="2048">2048</option>
             <option :value="4096">4096</option>
           </select>
-          <select v-else v-model="curve" class="select font-mono text-sm w-full">
+          <select v-else v-model="curve" id="ssl-size" class="select font-mono text-sm w-full">
             <option value="P-256">P-256</option>
             <option value="P-384">P-384</option>
           </select>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.commonName') }}</span></label>
-          <input v-model="cn" class="input font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.cnPlaceholder')" />
+          <label class="label" for="ssl-cn"><span class="label-text">{{ t('tools.sslCertGenerator.commonName') }}</span></label>
+          <input v-model="cn" id="ssl-cn" class="input font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.cnPlaceholder')" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.validity') }}</span></label>
+          <label class="label" for="ssl-days"><span class="label-text">{{ t('tools.sslCertGenerator.validity') }}</span></label>
           <div class="flex items-center gap-2">
-            <input v-model.number="days" type="number" min="1" max="3650" class="input font-mono text-sm flex-1 min-w-0" />
+            <input v-model.number="days" id="ssl-days" type="number" min="1" max="3650" class="input font-mono text-sm flex-1 min-w-0" />
             <span class="text-sm text-base-content/60 whitespace-nowrap">{{ t('tools.sslCertGenerator.days') }}</span>
           </div>
         </div>
         <div class="form-control md:col-span-2">
-          <label class="label"><span class="label-text">{{ t('tools.sslCertGenerator.sans') }}</span></label>
-          <textarea v-model="sans" rows="2" class="textarea font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.sansPlaceholder')"></textarea>
-          <label class="label"><span class="label-text text-xs text-base-content/50">{{ t('tools.sslCertGenerator.sansHint') }}</span></label>
+          <label class="label" for="ssl-sans"><span class="label-text">{{ t('tools.sslCertGenerator.sans') }}</span></label>
+          <textarea v-model="sans" id="ssl-sans" rows="2" class="textarea font-mono text-sm w-full" :placeholder="t('tools.sslCertGenerator.sansPlaceholder')"></textarea>
+          <div class="label"><span class="label-text text-xs text-base-content/50">{{ t('tools.sslCertGenerator.sansHint') }}</span></div>
         </div>
         <div class="md:col-span-2">
           <div class="form-control">

@@ -37,8 +37,8 @@ function copy() {
     <p class="text-base-content/70 mb-8">{{ t('tools.cronGenerator.desc') }}</p>
 
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
-      <div class="form-control mb-6">
-        <label class="label"><span class="label-text">{{ t('tools.cronGenerator.presets') }}</span></label>
+      <div class="form-control mb-6" role="group" :aria-label="t('tools.cronGenerator.presets')">
+        <span class="label"><span class="label-text">{{ t('tools.cronGenerator.presets') }}</span></span>
         <div class="flex flex-wrap gap-2">
           <button
             v-for="(p, key) in presets"
@@ -52,28 +52,28 @@ function copy() {
 
       <div v-if="preset === 'custom'" class="grid gap-3 md:grid-cols-5">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.cronGenerator.minute') }}</span></label>
-          <input v-model="customMinute" class="input font-mono text-center" placeholder="0" />
+          <label class="label" for="cg-minute"><span class="label-text">{{ t('tools.cronGenerator.minute') }}</span></label>
+          <input v-model="customMinute" id="cg-minute" class="input font-mono text-center" placeholder="0" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.minuteRange') }}</span>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.cronGenerator.hour') }}</span></label>
-          <input v-model="customHour" class="input font-mono text-center" placeholder="*" />
+          <label class="label" for="cg-hour"><span class="label-text">{{ t('tools.cronGenerator.hour') }}</span></label>
+          <input v-model="customHour" id="cg-hour" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.hourRange') }}</span>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.cronGenerator.dayOfMonth') }}</span></label>
-          <input v-model="customDay" class="input font-mono text-center" placeholder="*" />
+          <label class="label" for="cg-day"><span class="label-text">{{ t('tools.cronGenerator.dayOfMonth') }}</span></label>
+          <input v-model="customDay" id="cg-day" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.dayRange') }}</span>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.cronGenerator.month') }}</span></label>
-          <input v-model="customMonth" class="input font-mono text-center" placeholder="*" />
+          <label class="label" for="cg-month"><span class="label-text">{{ t('tools.cronGenerator.month') }}</span></label>
+          <input v-model="customMonth" id="cg-month" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.monthRange') }}</span>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.cronGenerator.dayOfWeek') }}</span></label>
-          <input v-model="customWeekday" class="input font-mono text-center" placeholder="*" />
+          <label class="label" for="cg-weekday"><span class="label-text">{{ t('tools.cronGenerator.dayOfWeek') }}</span></label>
+          <input v-model="customWeekday" id="cg-weekday" class="input font-mono text-center" placeholder="*" />
           <span class="text-xs text-base-content/60 mt-1">{{ t('tools.cronGenerator.weekRange') }}</span>
         </div>
       </div>

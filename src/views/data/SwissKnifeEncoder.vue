@@ -64,15 +64,15 @@ function copy() {
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-3 mb-6">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.mode') }}</span></label>
-          <select v-model="mode" class="select font-mono text-sm" @change="process">
+          <label class="label" for="ske-mode"><span class="label-text">{{ t('tools.swissKnifeEncoder.mode') }}</span></label>
+          <select v-model="mode" id="ske-mode" class="select font-mono text-sm" @change="process">
             <option value="encode">{{ t('tools.swissKnifeEncoder.encode') }}</option>
             <option value="decode">{{ t('tools.swissKnifeEncoder.decode') }}</option>
           </select>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.type') }}</span></label>
-          <select v-model="type" class="select font-mono text-sm" @change="process">
+          <label class="label" for="ske-type"><span class="label-text">{{ t('tools.swissKnifeEncoder.type') }}</span></label>
+          <select v-model="type" id="ske-type" class="select font-mono text-sm" @change="process">
             <option value="url">{{ t('tools.swissKnifeEncoder.url') }}</option>
             <option value="base64">{{ t('tools.swissKnifeEncoder.base64') }}</option>
             <option value="html">{{ t('tools.swissKnifeEncoder.htmlEntities') }}</option>
@@ -83,12 +83,12 @@ function copy() {
 
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.input') }}</span></label>
-          <textarea v-model="input" class="textarea font-mono text-sm min-h-28" @input="process"></textarea>
+          <label class="label" for="ske-input"><span class="label-text">{{ t('tools.swissKnifeEncoder.input') }}</span></label>
+          <textarea v-model="input" id="ske-input" class="textarea font-mono text-sm min-h-28" @input="process"></textarea>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.swissKnifeEncoder.output') }}</span></label>
-          <textarea :value="output" class="textarea font-mono text-sm min-h-28" readonly></textarea>
+          <label class="label" for="ske-output"><span class="label-text">{{ t('tools.swissKnifeEncoder.output') }}</span></label>
+          <textarea :value="output" id="ske-output" class="textarea font-mono text-sm min-h-28" readonly></textarea>
         </div>
       </div>
     </div>

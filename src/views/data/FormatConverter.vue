@@ -154,14 +154,14 @@ const formats = ['json', 'yaml', 'csv']
     <p class="text-base-content/70 mb-8">{{ t('tools.formatConverter.desc') }}</p>
 
     <div class="grid gap-4 md:grid-cols-2 mb-6">
-      <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.formatConverter.inputFormat') }}</span></label>
+      <div class="form-control" role="group" :aria-label="t('tools.formatConverter.inputFormat')">
+        <span class="label"><span class="label-text">{{ t('tools.formatConverter.inputFormat') }}</span></span>
         <div class="flex gap-2">
           <button v-for="f in formats" :key="f" class="btn btn-sm flex-1" :class="inputFormat === f ? 'btn-primary' : 'btn-outline'" @click="inputFormat = f">{{ f.toUpperCase() }}</button>
         </div>
       </div>
-      <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.formatConverter.outputFormat') }}</span></label>
+      <div class="form-control" role="group" :aria-label="t('tools.formatConverter.outputFormat')">
+        <span class="label"><span class="label-text">{{ t('tools.formatConverter.outputFormat') }}</span></span>
         <div class="flex gap-2">
           <button v-for="f in formats" :key="f" class="btn btn-sm flex-1" :class="outputFormat === f ? 'btn-primary' : 'btn-outline'" @click="outputFormat = f">{{ f.toUpperCase() }}</button>
         </div>
@@ -170,12 +170,12 @@ const formats = ['json', 'yaml', 'csv']
 
     <div class="grid gap-4 md:grid-cols-2 mb-4">
       <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.formatConverter.input') }}</span></label>
-        <textarea v-model="input" class="textarea font-mono text-sm min-h-40" :placeholder="t('tools.formatConverter.inputPlaceholder', { format: inputFormat.toUpperCase() })"></textarea>
+        <label class="label" for="fc-input"><span class="label-text">{{ t('tools.formatConverter.input') }}</span></label>
+        <textarea v-model="input" id="fc-input" class="textarea font-mono text-sm min-h-40" :placeholder="t('tools.formatConverter.inputPlaceholder', { format: inputFormat.toUpperCase() })"></textarea>
       </div>
       <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.formatConverter.output') }}</span></label>
-        <textarea :value="output" class="textarea font-mono text-sm min-h-40" readonly></textarea>
+        <label class="label" for="fc-output"><span class="label-text">{{ t('tools.formatConverter.output') }}</span></label>
+        <textarea :value="output" id="fc-output" class="textarea font-mono text-sm min-h-40" readonly></textarea>
       </div>
     </div>
 

@@ -39,24 +39,24 @@ function copy() {
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.user') }}</span></label>
-          <input v-model="user" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.userPlaceholder')" />
+          <label class="label" for="sia-user"><span class="label-text">{{ t('tools.sshInstallAssistant.user') }}</span></label>
+          <input v-model="user" id="sia-user" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.userPlaceholder')" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.host') }}</span></label>
-          <input v-model="host" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.hostPlaceholder')" />
+          <label class="label" for="sia-host"><span class="label-text">{{ t('tools.sshInstallAssistant.host') }}</span></label>
+          <input v-model="host" id="sia-host" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.hostPlaceholder')" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.port') }}</span></label>
-          <input v-model.number="port" type="number" class="input font-mono" min="1" max="65535" />
+          <label class="label" for="sia-port"><span class="label-text">{{ t('tools.sshInstallAssistant.port') }}</span></label>
+          <input v-model.number="port" id="sia-port" type="number" class="input font-mono" min="1" max="65535" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.keyPath') }}</span></label>
-          <input v-model="keyPath" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.keyPlaceholder')" />
+          <label class="label" for="sia-keypath"><span class="label-text">{{ t('tools.sshInstallAssistant.keyPath') }}</span></label>
+          <input v-model="keyPath" id="sia-keypath" class="input font-mono" :placeholder="t('tools.sshInstallAssistant.keyPlaceholder')" />
         </div>
       </div>
-      <div class="form-control mt-4">
-        <label class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.method') }}</span></label>
+      <div class="form-control mt-4" role="group" :aria-label="t('tools.sshInstallAssistant.method')">
+        <span class="label"><span class="label-text">{{ t('tools.sshInstallAssistant.method') }}</span></span>
         <div class="flex gap-4">
           <label class="label cursor-pointer justify-start gap-3">
             <input v-model="method" type="radio" class="radio radio-sm" value="ssh-copy-id" />

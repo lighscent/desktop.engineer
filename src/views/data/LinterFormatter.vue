@@ -66,12 +66,12 @@ watch([mode, input], process, { immediate: true })
 
     <div class="grid gap-4 md:grid-cols-2 mb-4">
       <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.linterFormatter.input') }}</span></label>
-        <textarea v-model="input" class="textarea font-mono text-sm min-h-40" :placeholder="mode === 'json' ? t('tools.linterFormatter.jsonPlaceholder') : t('tools.linterFormatter.yamlPlaceholder')"></textarea>
+        <label class="label" for="lf-input"><span class="label-text">{{ t('tools.linterFormatter.input') }}</span></label>
+        <textarea v-model="input" id="lf-input" class="textarea font-mono text-sm min-h-40" :placeholder="mode === 'json' ? t('tools.linterFormatter.jsonPlaceholder') : t('tools.linterFormatter.yamlPlaceholder')"></textarea>
       </div>
       <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.linterFormatter.output') }}</span></label>
-        <textarea :value="output" class="textarea font-mono text-sm min-h-40" readonly :class="{ 'textarea-error': error }"></textarea>
+        <label class="label" for="lf-output"><span class="label-text">{{ t('tools.linterFormatter.output') }}</span></label>
+        <textarea :value="output" id="lf-output" class="textarea font-mono text-sm min-h-40" readonly :class="{ 'textarea-error': error }"></textarea>
       </div>
     </div>
 

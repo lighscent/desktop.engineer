@@ -131,9 +131,10 @@ function copy(text) {
     <p class="text-base-content/70 mb-8">{{ t('tools.publicKeyAnalyzer.desc') }}</p>
 
     <div class="form-control mb-6">
-      <label class="label"><span class="label-text">{{ t('tools.publicKeyAnalyzer.keyInput') }}</span></label>
+      <label class="label" for="pka-key"><span class="label-text">{{ t('tools.publicKeyAnalyzer.keyInput') }}</span></label>
       <textarea
         v-model="rawKey"
+        id="pka-key"
         class="textarea font-mono text-sm min-h-28"
         :placeholder="t('tools.publicKeyAnalyzer.keyPlaceholder')"
         @input="analyze"

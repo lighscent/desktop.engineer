@@ -41,9 +41,9 @@ generate()
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.envKeyGenerator.length') }}</span></label>
+          <label class="label" for="ekg-length"><span class="label-text">{{ t('tools.envKeyGenerator.length') }}</span></label>
           <div class="flex gap-2 items-center">
-            <input v-model.number="length" type="range" min="16" max="256" class="range range-sm flex-1" @input="generate" />
+            <input v-model.number="length" id="ekg-length" type="range" min="16" max="256" class="range range-sm flex-1" @input="generate" />
             <span class="font-mono text-sm w-12 text-right">{{ length }}</span>
           </div>
           <div class="relative w-full h-5 mt-0.5">
@@ -65,15 +65,15 @@ generate()
           </div>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.envKeyGenerator.format') }}</span></label>
-          <select v-model="format" class="select font-mono text-sm">
+          <label class="label" for="ekg-format"><span class="label-text">{{ t('tools.envKeyGenerator.format') }}</span></label>
+          <select v-model="format" id="ekg-format" class="select font-mono text-sm">
             <option value="base64">{{ t('tools.envKeyGenerator.base64') }}</option>
             <option value="hex">{{ t('tools.envKeyGenerator.hex') }}</option>
           </select>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.envKeyGenerator.prefix') }}</span></label>
-          <input v-model="prefix" class="input font-mono text-sm" :placeholder="t('tools.envKeyGenerator.prefixPlaceholder')" />
+          <label class="label" for="ekg-prefix"><span class="label-text">{{ t('tools.envKeyGenerator.prefix') }}</span></label>
+          <input v-model="prefix" id="ekg-prefix" class="input font-mono text-sm" :placeholder="t('tools.envKeyGenerator.prefixPlaceholder')" />
         </div>
         <div class="form-control">
           <label class="label cursor-pointer justify-start gap-3">

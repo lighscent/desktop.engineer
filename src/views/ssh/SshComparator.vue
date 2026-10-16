@@ -35,17 +35,19 @@ function compare() {
 
     <div class="grid gap-6 md:grid-cols-2 mb-6">
       <div class="form-control">
-        <label class="label"><span class="label-text">Clé / Empreinte A</span></label>
+        <label class="label" for="shc-a"><span class="label-text">Clé / Empreinte A</span></label>
         <textarea
           v-model="keyA"
+          id="shc-a"
           class="textarea font-mono text-sm min-h-32"
           placeholder="ssh-ed25519 AAAA... (ou SHA256:... / MD5:...)"
         ></textarea>
       </div>
       <div class="form-control">
-        <label class="label"><span class="label-text">Clé / Empreinte B</span></label>
+        <label class="label" for="shc-b"><span class="label-text">Clé / Empreinte B</span></label>
         <textarea
           v-model="keyB"
+          id="shc-b"
           class="textarea font-mono text-sm min-h-32"
           placeholder="ssh-ed25519 AAAA... (ou SHA256:... / MD5:...)"
         ></textarea>

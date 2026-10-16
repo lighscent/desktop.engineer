@@ -59,8 +59,8 @@ generate()
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.passwordGenerator.length') }}</span></label>
-          <input v-model.number="length" type="range" min="4" max="128" class="range range-sm" />
+          <label class="label" for="pg-length"><span class="label-text">{{ t('tools.passwordGenerator.length') }}</span></label>
+          <input v-model.number="length" id="pg-length" type="range" min="4" max="128" class="range range-sm" />
           <span class="text-sm text-base-content/60 mt-1">{{ length }} {{ t('tools.passwordGenerator.chars') }}</span>
         </div>
         <div class="flex flex-col gap-2">

@@ -77,8 +77,8 @@ function copy() {
     <p class="text-base-content/70 mb-8">{{ t('tools.keyFormatConverter.desc') }}</p>
 
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
-      <div class="form-control mb-4">
-        <label class="label"><span class="label-text">{{ t('tools.keyFormatConverter.direction') }}</span></label>
+      <div class="form-control mb-4" role="group" :aria-label="t('tools.keyFormatConverter.direction')">
+        <span class="label"><span class="label-text">{{ t('tools.keyFormatConverter.direction') }}</span></span>
         <div class="flex gap-4">
           <label class="label cursor-pointer justify-start gap-3">
             <input v-model="direction" type="radio" class="radio radio-sm" value="openssh-to-putty" />
@@ -92,9 +92,10 @@ function copy() {
       </div>
 
       <div class="form-control">
-        <label class="label"><span class="label-text">{{ t('tools.keyFormatConverter.pasteKey') }}</span></label>
+        <label class="label" for="kfc-key"><span class="label-text">{{ t('tools.keyFormatConverter.pasteKey') }}</span></label>
         <textarea
           v-model="keyInput"
+          id="kfc-key"
           class="textarea font-mono text-sm min-h-32"
           :placeholder="t('tools.keyFormatConverter.keyPlaceholder')"
         ></textarea>

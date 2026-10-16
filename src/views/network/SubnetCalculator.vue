@@ -73,10 +73,11 @@ function calculate() {
     <p class="text-base-content/70 mb-8">{{ t('tools.subnetCalculator.desc') }}</p>
 
     <div class="form-control mb-6">
-      <label class="label"><span class="label-text">{{ t('tools.subnetCalculator.cidr') }}</span></label>
+      <label class="label" for="sc-cidr"><span class="label-text">{{ t('tools.subnetCalculator.cidr') }}</span></label>
       <div class="flex gap-3">
         <input
           v-model="input"
+          id="sc-cidr"
           class="input font-mono flex-1"
           :placeholder="t('tools.subnetCalculator.cidrPlaceholder')"
           @keyup.enter="calculate"

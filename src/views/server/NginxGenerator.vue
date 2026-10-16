@@ -144,20 +144,20 @@ function copy() {
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.domain') }}</span></label>
-          <input v-model="domain" class="input font-mono" :placeholder="t('tools.nginxGenerator.domainPlaceholder')" />
+          <label class="label" for="ng-domain"><span class="label-text">{{ t('tools.nginxGenerator.domain') }}</span></label>
+          <input v-model="domain" id="ng-domain" class="input font-mono" :placeholder="t('tools.nginxGenerator.domainPlaceholder')" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.backendIp') }}</span></label>
-          <input v-model="ip" class="input font-mono" :disabled="siteType === 'static'" :placeholder="t('tools.nginxGenerator.ipPlaceholder')" />
+          <label class="label" for="ng-ip"><span class="label-text">{{ t('tools.nginxGenerator.backendIp') }}</span></label>
+          <input v-model="ip" id="ng-ip" class="input font-mono" :disabled="siteType === 'static'" :placeholder="t('tools.nginxGenerator.ipPlaceholder')" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.backendPort') }}</span></label>
-          <input v-model.number="port" type="number" class="input font-mono" :disabled="siteType === 'static'" min="1" max="65535" />
+          <label class="label" for="ng-port"><span class="label-text">{{ t('tools.nginxGenerator.backendPort') }}</span></label>
+          <input v-model.number="port" id="ng-port" type="number" class="input font-mono" :disabled="siteType === 'static'" min="1" max="65535" />
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.root') }}</span></label>
-          <input v-model="rootDir" class="input font-mono" :placeholder="t('tools.nginxGenerator.rootPlaceholder')" />
+          <label class="label" for="ng-root"><span class="label-text">{{ t('tools.nginxGenerator.root') }}</span></label>
+          <input v-model="rootDir" id="ng-root" class="input font-mono" :placeholder="t('tools.nginxGenerator.rootPlaceholder')" />
         </div>
       </div>
 
@@ -203,8 +203,8 @@ function copy() {
       </div>
       <div v-if="php" class="mt-3 md:w-1/2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.nginxGenerator.phpBackend') }}</span></label>
-          <input v-model="phpBackend" class="input font-mono input-sm" :placeholder="t('tools.nginxGenerator.phpBackendPlaceholder')" />
+          <label class="label" for="ng-php-backend"><span class="label-text">{{ t('tools.nginxGenerator.phpBackend') }}</span></label>
+          <input v-model="phpBackend" id="ng-php-backend" class="input font-mono input-sm" :placeholder="t('tools.nginxGenerator.phpBackendPlaceholder')" />
         </div>
       </div>
     </div>

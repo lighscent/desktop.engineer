@@ -85,23 +85,23 @@ function copyCmd() {
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="grid gap-4 md:grid-cols-2">
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.keyType') }}</span></label>
-          <select v-model="keyType" class="select font-mono text-sm">
+          <label class="label" for="skg-type"><span class="label-text">{{ t('tools.sshKeyGenerator.keyType') }}</span></label>
+          <select v-model="keyType" id="skg-type" class="select font-mono text-sm">
             <option value="ed25519">{{ t('tools.sshKeyGenerator.ed25519Label') }}</option>
             <option value="rsa">{{ t('tools.sshKeyGenerator.rsaLabel') }}</option>
             <option value="ecdsa">{{ t('tools.sshKeyGenerator.ecdsaLabel') }}</option>
           </select>
         </div>
         <div v-if="keyType === 'rsa'" class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.size') }}</span></label>
-          <select v-model.number="bits" class="select font-mono text-sm">
+          <label class="label" for="skg-bits"><span class="label-text">{{ t('tools.sshKeyGenerator.size') }}</span></label>
+          <select v-model.number="bits" id="skg-bits" class="select font-mono text-sm">
             <option :value="2048">{{ t('tools.sshKeyGenerator.size2048') }}</option>
             <option :value="4096">{{ t('tools.sshKeyGenerator.size4096') }}</option>
           </select>
         </div>
         <div class="form-control">
-          <label class="label"><span class="label-text">{{ t('tools.sshKeyGenerator.comment') }}</span></label>
-          <input v-model="comment" class="input font-mono text-sm" :placeholder="t('tools.sshKeyGenerator.userPlaceholder')" />
+          <label class="label" for="skg-comment"><span class="label-text">{{ t('tools.sshKeyGenerator.comment') }}</span></label>
+          <input v-model="comment" id="skg-comment" class="input font-mono text-sm" :placeholder="t('tools.sshKeyGenerator.userPlaceholder')" />
         </div>
       </div>
     </div>
