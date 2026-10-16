@@ -14,8 +14,8 @@ const htmlEntityMap = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", '#x27
 function decodeHtmlEntities(str) {
   return str.replace(/&(#\d+|#x[\da-fA-F]+|\w+);/g, (_, entity) => {
     if (htmlEntityMap[entity]) return htmlEntityMap[entity]
-    if (entity.startsWith('#x')) return String.fromCharCode(parseInt(entity.slice(2), 16))
-    if (entity.startsWith('#')) return String.fromCharCode(parseInt(entity.slice(1)))
+    if (entity.startsWith('#x')) return String.fromCharCode(Number.parseInt(entity.slice(2), 16))
+    if (entity.startsWith('#')) return String.fromCharCode(Number.parseInt(entity.slice(1)))
     return _
   })
 }
@@ -37,7 +37,7 @@ function process() {
         case 'url': output.value = decodeURIComponent(val); break
         case 'base64': output.value = atob(val); break
         case 'html': output.value = decodeHtmlEntities(val); break
-        case 'hex': output.value = new TextDecoder().decode(new Uint8Array(val.trim().split(/\s+/).map(h => parseInt(h, 16)))); break
+        case 'hex': output.value = new TextDecoder().decode(new Uint8Array(val.trim().split(/\s+/).map(h => Number.parseInt(h, 16)))); break
       }
     }
   } catch (e) {

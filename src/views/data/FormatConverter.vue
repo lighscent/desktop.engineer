@@ -99,7 +99,7 @@ function toArrays(obj) {
   const keys = Object.keys(obj)
   if (keys.length > 0 && keys.every(k => /^\d+$/.test(k))) {
     const arr = []
-    for (const k of keys) arr[parseInt(k)] = toArrays(obj[k])
+    for (const k of keys) arr[Number.parseInt(k)] = toArrays(obj[k])
     return arr
   }
   const result = {}

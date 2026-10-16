@@ -10,8 +10,8 @@ const result = ref(null)
 function parseCIDR(str) {
   const m = str.match(/^(\d+)\.(\d+)\.(\d+)\.(\d+)\/(\d+)$/)
   if (!m) return null
-  const octets = [parseInt(m[1]), parseInt(m[2]), parseInt(m[3]), parseInt(m[4])]
-  const bits = parseInt(m[5])
+  const octets = [Number.parseInt(m[1]), Number.parseInt(m[2]), Number.parseInt(m[3]), Number.parseInt(m[4])]
+  const bits = Number.parseInt(m[5])
   if (bits < 0 || bits > 32) return null
   if (octets.some(o => o < 0 || o > 255)) return null
   return { octets, bits }

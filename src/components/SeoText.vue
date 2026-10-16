@@ -12,7 +12,7 @@ const heading = computed(() => t(`seo.${props.ns}.h2`))
 const intro = computed(() => t(`seo.${props.ns}.intro`))
 const outro = computed(() => t(`seo.${props.ns}.outro`))
 const points = computed(() => {
-  const count = parseInt(t(`seo.${props.ns}.pointsCount`), 10) || 0
+  const count = Number.parseInt(t(`seo.${props.ns}.pointsCount`), 10) || 0
   return Array.from({ length: count }, (_, i) => t(`seo.${props.ns}.p${i + 1}`))
 })
 </script>

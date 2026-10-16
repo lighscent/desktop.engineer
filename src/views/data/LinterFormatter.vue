@@ -24,7 +24,7 @@ function process() {
       } catch (e) {
         const match = e.message.match(/position\s+(\d+)/)
         if (match) {
-          const pos = parseInt(match[1])
+          const pos = Number.parseInt(match[1])
           const lines = input.value.substring(0, pos).split('\n')
           errorLine.value = lines.length
         }
@@ -36,7 +36,7 @@ function process() {
         data = load(input.value)
       } catch (e) {
         const match = e.message.match(/line (\d+)/)
-        if (match) errorLine.value = parseInt(match[1])
+        if (match) errorLine.value = Number.parseInt(match[1])
         throw e
       }
       output.value = dump(data, { indent: 2, lineWidth: -1 })

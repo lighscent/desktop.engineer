@@ -35,7 +35,7 @@ function readBigIntBytes(buf, offset) {
 function md5Bytes(data) {
   const hex = SparkMD5.ArrayBuffer.hash(data.buffer)
   const arr = new Uint8Array(16)
-  for (let i = 0; i < 16; i++) arr[i] = parseInt(hex.substr(i * 2, 2), 16)
+  for (let i = 0; i < 16; i++) arr[i] = Number.parseInt(hex.substr(i * 2, 2), 16)
   return arr
 }
 
