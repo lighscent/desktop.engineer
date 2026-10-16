@@ -101,9 +101,9 @@ onBeforeUnmount(() => {
     <div class="navbar bg-base-200/80 backdrop-blur-md border-b border-base-300 sticky top-0 z-50 px-4 shrink-0">
       <div class="navbar-start">
         <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost btn-square lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
-            <i class="fas fa-bars text-lg"></i>
-          </label>
+          <button type="button" class="btn btn-ghost btn-square lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Menu" @click="mobileMenuOpen = !mobileMenuOpen">
+            <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+          </button>
           <ul v-if="mobileMenuOpen" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-base-200 rounded-box w-64 max-w-[calc(100vw-2rem)] border border-base-300">
             <li><router-link to="/" :class="{ 'menu-active': route.path === '/' }"><i class="fas fa-home w-5"></i>{{ t('nav.home') }}</router-link></li>
             <li v-for="cat in categories" :key="cat.name" class="menu-title mt-2">
