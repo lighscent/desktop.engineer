@@ -242,6 +242,7 @@ export default {
     hashChecker: {
       title: 'Générateur / Vérificateur de Checksum',
       desc: 'Calculez les empreintes numériques d\'un texte ou d\'un fichier.',
+      legacyNote: 'MD5 et SHA-1 sont affichés pour compatibilité des checksums uniquement — ne les utilisez pas à des fins de sécurité.',
       text: 'Texte',
       file: 'Fichier',
       textPlaceholder: 'Collez un texte ou un hash à vérifier...',

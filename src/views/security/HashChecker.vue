@@ -6,6 +6,10 @@ import HashWorker from '@/workers/hashWorker?worker'
 
 const { t } = useI18n()
 
+// NOTE (CodeQL js/weak-hashes): MD5/SHA-1 are offered here strictly for
+// checksum interoperability (verifying published md5sum/sha1sum fingerprints
+// of downloads). They are never used for passwords, signatures, or any
+// security decision — no sensitive context.
 const MB = 1024 * 1024
 const CHUNK = 1 * MB
 
@@ -37,7 +41,7 @@ async function computeText() {
   const data = new TextEncoder().encode(text)
 
   const [digest1, digest256, digest512] = await Promise.all([
-    crypto.subtle.digest('SHA-1', data),
+    crypto.subtle.digest('SHA-1', data), // codeql[js/weak-hashes] checksum interop only, see NOTE above
     crypto.subtle.digest('SHA-256', data),
     crypto.subtle.digest('SHA-512', data),
   ])
@@ -69,7 +73,8 @@ function handleFile(e) {
     reader.onload = async () => {
       const data = new Uint8Array(reader.result)
       loaded.value = total.value
-      const algorithms = ['SHA-1', 'SHA-256', 'SHA-512']
+      const algorithms = ['SHA-1', // codeql[js/weak-hashes] checksum interop only, see NOTE above
+        'SHA-256', 'SHA-512']
       const digests = await Promise.all(
         algorithms.map(algo => crypto.subtle.digest(algo, data))
       )
@@ -140,7 +145,8 @@ const hashes = [
 <template>
   <div>
     <h1 class="text-2xl md:text-3xl font-mono font-bold mb-2"><i class="fas fa-fingerprint mr-2"></i>{{ t('tools.hashChecker.title') }}</h1>
-    <p class="text-base-content/70 mb-8">{{ t('tools.hashChecker.desc') }}</p>
+    <p class="text-base-content/70 mb-2">{{ t('tools.hashChecker.desc') }}</p>
+    <p class="text-xs text-warning mb-8"><i class="fas fa-triangle-exclamation mr-1"></i>{{ t('tools.hashChecker.legacyNote') }}</p>
 
     <div class="card bg-base-200 border border-base-300 p-4 sm:p-6 mb-6 w-full min-w-0">
       <div class="flex gap-4 mb-4">

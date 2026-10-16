@@ -242,6 +242,7 @@ export default {
     hashChecker: {
       title: 'Checksum Generator / Verifier',
       desc: 'Compute fingerprints of text or a file.',
+      legacyNote: 'MD5 and SHA-1 are shown for checksum compatibility only — do not use them for security purposes.',
       text: 'Text',
       file: 'File',
       textPlaceholder: 'Paste text or hash to verify...',
