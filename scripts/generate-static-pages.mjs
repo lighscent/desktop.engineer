@@ -35,11 +35,10 @@ function jsonLd(meta, path, desc) {
       inLanguage: ['fr', 'en'],
     })
   } else {
+    // 2-level trail: categories have no dedicated page, and Google Search Console
+    // rejects ListItem entries without an "item" URL.
     const items = [{ '@type': 'ListItem', position: 1, name: t('nav.home'), item: SITE + '/' }]
-    if (meta.catKey) {
-      items.push({ '@type': 'ListItem', position: 2, name: t(`nav.${meta.catKey}`) })
-    }
-    items.push({ '@type': 'ListItem', position: 3, name: t(meta.titleKey), item: url })
+    items.push({ '@type': 'ListItem', position: 2, name: t(meta.titleKey), item: url })
     graphs.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items })
   }
 
