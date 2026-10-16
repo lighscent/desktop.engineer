@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://desktop.engineer/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/ssh-key-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/public-key-analyzer</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/ssh/ssh-config-generator</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,55 +44,55 @@
   </url>
   <url>
     <loc>https://desktop.engineer/security/password-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/security/env-key-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/security/hash-checker</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/network/ip-info</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/network/subnet-calculator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/server/nginx-generator</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/server/ssl-cert-generator</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/server/cron-generator</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/data/format-converter</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -104,13 +104,13 @@
   </url>
   <url>
     <loc>https://desktop.engineer/data/swiss-knife-encoder</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://desktop.engineer/changelog</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
