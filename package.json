@@ -1,6 +1,6 @@
 {
   "name": "desktop.engineer",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": true,
   "type": "module",
   "description": "Toolkit for system engineers — SSH, networking, encryption, and security. 100% client-side PWA.",
@@ -39,6 +39,9 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fortawesome/fontawesome-free": "^7.3.1",
     "@peculiar/x509": "^2.2.0",
     "crypto-random-string": "^6.0.0",
     "hash.js": "^1.1.7",

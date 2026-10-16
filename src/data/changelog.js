@@ -1,5 +1,20 @@
 export default [
   {
+  version: '0.1.12',
+  date: '2026-10-16',
+  title: { en: 'Self-hosted fonts & icons, faster mobile load', fr: 'Polices & icônes auto-hébergées, chargement mobile accéléré' },
+  changes: {
+    en: [
+      'Self-hosted Inter, JetBrains Mono (latin subset) and Font Awesome via npm — removed render-blocking Google Fonts and CDN requests',
+      'Tightened Content-Security-Policy (no third-party font/style sources) and dropped obsolete CDN entries from the service worker cache',
+    ],
+    fr: [
+      'Inter, JetBrains Mono (subset latin) et Font Awesome auto-hébergés via npm — requêtes bloquantes Google Fonts et CDN supprimées',
+      'Content-Security-Policy resserrée (plus de sources tierces de polices/styles) et entrées CDN obsolètes retirées du cache du service worker',
+    ],
+  },
+},
+  {
   version: '0.1.11',
   date: '2026-10-16',
   title: { en: 'CVE patches, CodeQL & SonarQube hardening', fr: 'Correctifs CVE, durcissement CodeQL & SonarQube' },
