@@ -65,9 +65,11 @@ function doLookup() {
     <p class="text-base-content/70 mb-8">{{ t('tools.ipInfo.desc') }}</p>
 
     <div class="form-control mb-6">
+      <label class="label" for="ii-address"><span class="label-text">{{ t('tools.ipInfo.enterIp') }}</span></label>
       <div class="flex gap-3">
         <input
           v-model="ip"
+          id="ii-address"
           class="input font-mono flex-1"
           :placeholder="t('tools.ipInfo.ipPlaceholder')"
           @keyup.enter="doLookup"

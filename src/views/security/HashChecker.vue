@@ -155,15 +155,18 @@ const hashes = [
       </div>
 
       <div v-if="mode === 'text'">
+        <label class="sr-only" for="hc-text">{{ t('tools.hashChecker.textPlaceholder') }}</label>
         <textarea
           v-model="input"
+          id="hc-text"
           class="textarea font-mono text-sm min-h-28 w-full"
           :placeholder="t('tools.hashChecker.textPlaceholder')"
           @input="computeText"
         ></textarea>
       </div>
       <div v-else>
-        <input type="file" class="file-input file-input w-full" @change="handleFile" />
+        <label class="sr-only" for="hc-file">{{ t('tools.hashChecker.file') }}</label>
+        <input type="file" id="hc-file" class="file-input file-input w-full" @change="handleFile" />
         <p v-if="fileName" class="text-xs text-base-content/50 mt-2"><i class="fas fa-file mr-1"></i>{{ fileName }}</p>
       </div>
     </div>

@@ -127,7 +127,8 @@ function checkCustom() {
       <h2 class="text-xl font-mono font-bold mb-3">{{ t('tools.chmodCheatSheet.checker') }}</h2>
       <p class="text-sm text-base-content/70 mb-3">{{ t('tools.chmodCheatSheet.checkerDesc') }}</p>
       <div class="flex gap-3">
-        <input v-model="customCmd" class="input font-mono flex-1" :placeholder="t('tools.chmodCheatSheet.checkerPlaceholder')" @keyup.enter="checkCustom" />
+        <label class="sr-only" for="ccc-checker">{{ t('tools.chmodCheatSheet.checkerDesc') }}</label>
+        <input v-model="customCmd" id="ccc-checker" class="input font-mono flex-1" :placeholder="t('tools.chmodCheatSheet.checkerPlaceholder')" @keyup.enter="checkCustom" />
         <button class="btn btn-outline" @click="checkCustom"><i class="fas fa-check mr-1"></i>{{ t('tools.chmodCheatSheet.check') }}</button>
       </div>
       <div v-if="customOutput" class="mt-3">

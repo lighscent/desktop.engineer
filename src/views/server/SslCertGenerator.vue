@@ -110,7 +110,8 @@ function copy(text) {
             </label>
           </div>
           <div v-if="encrypt" class="flex flex-col sm:flex-row sm:items-center gap-2 mt-1">
-            <input :value="password" readonly class="input input-sm font-mono text-sm w-full sm:w-auto sm:flex-1 sm:min-w-0" />
+            <label class="sr-only" for="ssl-password">{{ t('tools.sslCertGenerator.passwordFile') }}</label>
+            <input :value="password" id="ssl-password" readonly class="input input-sm font-mono text-sm w-full sm:w-auto sm:flex-1 sm:min-w-0" />
             <div class="flex gap-2">
               <button class="btn btn-outline btn-sm" @click="regeneratePassword" :title="t('tools.sslCertGenerator.regenerate')">
                 <i class="fas fa-dice mr-1"></i>{{ t('tools.sslCertGenerator.regenerate') }}

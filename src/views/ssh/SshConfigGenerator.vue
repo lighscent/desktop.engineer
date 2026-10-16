@@ -78,7 +78,7 @@ function applyTemplate(tpl) {
       :key="idx"
       class="collapse collapse-arrow bg-base-200 border border-base-300 mb-3"
     >
-      <input type="checkbox" :checked="true" />
+      <input type="checkbox" :checked="true" :aria-label="h.host || t('tools.sshConfigGenerator.hostDefault') + ' ' + (idx + 1)" />
       <div class="collapse-title font-mono font-semibold">
         {{ h.host || t('tools.sshConfigGenerator.hostDefault') + ' ' + (idx + 1) }}
       </div>
